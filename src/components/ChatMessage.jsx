@@ -37,10 +37,10 @@ export default function ChatMessage({ message }) {
         <div
           className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-1"
           style={{
-            background: 'linear-gradient(135deg, #06B6D4, #6366F1)'
+            background: 'linear-gradient(135deg, #FEF4D5, #E6D17B)'
           }}
         >
-          <Brain size={16} className="text-white" />
+          <Brain size={16} className="text-midnight" />
         </div>
       )}
 
@@ -48,9 +48,9 @@ export default function ChatMessage({ message }) {
         {/* Message Bubble */}
         {isUser ? (
           <div
-            className="px-4 py-3 text-white text-sm leading-relaxed"
+            className="px-4 py-3 text-midnight text-sm leading-relaxed"
             style={{
-              background: 'linear-gradient(135deg, #6366F1, #3B82F6)',
+              background: 'linear-gradient(135deg, #E6D17B, #F1E49A)',
               borderRadius: '1rem 1rem 0.25rem 1rem',
               maxWidth: '70%'
             }}
@@ -61,12 +61,12 @@ export default function ChatMessage({ message }) {
           <div
             className="px-4 py-3 text-sm leading-relaxed"
             style={{
-              backgroundColor: '#1E1E22',
-              border: '1px solid rgba(63, 63, 70, 0.5)',
+              backgroundColor: '#3a2318',
+              border: '1px solid rgba(230, 209, 123, 0.25)',
               borderRadius: '1rem 1rem 1rem 0.25rem'
             }}
           >
-            <div className="markdown-content text-[#E4E4E7]">
+            <div className="markdown-content text-[#FEF4D5]">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeHighlight]}
@@ -77,27 +77,27 @@ export default function ChatMessage({ message }) {
 
             {/* Source References */}
             {message.sources && message.sources.length > 0 && (
-              <div className="flex flex-wrap gap-2 mt-3 pt-3" style={{ borderTop: '1px solid rgba(63, 63, 70, 0.3)' }}>
+              <div className="flex flex-wrap gap-2 mt-3 pt-3" style={{ borderTop: '1px solid rgba(230, 209, 123, 0.15)' }}>
                 {message.sources.map((source, idx) => (
                   <div
                     key={idx}
                     className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs"
                     style={{
-                      background: 'rgba(24, 24, 27, 0.6)',
+                      background: 'rgba(44, 24, 16, 0.6)',
                       backdropFilter: 'blur(12px)',
-                      border: '1px solid rgba(63, 63, 70, 0.4)'
+                      border: '1px solid rgba(230, 209, 123, 0.2)'
                     }}
                   >
-                    <FileText size={12} className="text-[#6366F1] flex-shrink-0" />
-                    <span className="text-[#A1A1AA]">{source.document}</span>
-                    <span className="text-[#52525B]">p.{source.page}</span>
+                    <FileText size={12} className="text-[#E6D17B] flex-shrink-0" />
+                    <span className="text-[#dcd2b8]">{source.document}</span>
+                    <span className="text-[#b0a68d]">p.{source.page}</span>
                     <span
                       className="px-1.5 py-0.5 rounded-full text-[10px] font-medium"
                       style={{
                         background: source.confidence >= 0.9
-                          ? 'rgba(34, 197, 94, 0.15)'
-                          : 'rgba(234, 179, 8, 0.15)',
-                        color: source.confidence >= 0.9 ? '#22C55E' : '#EAB308'
+                          ? 'rgba(143, 166, 130, 0.15)'
+                          : 'rgba(230, 185, 123, 0.15)',
+                        color: source.confidence >= 0.9 ? '#8fa682' : '#e6b97b'
                       }}
                     >
                       {Math.round(source.confidence * 100)}%
@@ -111,7 +111,7 @@ export default function ChatMessage({ message }) {
             <div className="flex gap-1 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
               <button
                 onClick={handleCopy}
-                className="p-1.5 rounded-lg transition-colors duration-150 text-[#71717A] hover:text-white hover:bg-[#27272A]"
+                className="p-1.5 rounded-lg transition-colors duration-150 text-[#b0a68d] hover:text-[#FEF4D5] hover:bg-[#4a3023]"
                 title={copied ? 'Copied!' : 'Copy'}
               >
                 {copied ? <Check size={14} /> : <Copy size={14} />}

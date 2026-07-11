@@ -6,44 +6,44 @@
 
 @theme {
   /* ── Color Palette ── */
-  --color-midnight: #09090B;
-  --color-slate-deep: #18181B;
-  --color-slate-mid: #27272A;
-  --color-slate-light: #3F3F46;
-  --color-slate-muted: #52525B;
-  --color-slate-subtle: #71717A;
+  --color-midnight: #2c1810;
+  --color-slate-deep: #331e15;
+  --color-slate-mid: #3d251c;
+  --color-slate-light: #4c3227;
+  --color-slate-muted: #6e4e3f;
+  --color-slate-subtle: #8a6857;
 
-  --color-indigo: #6366F1;
-  --color-indigo-dark: #4F46E5;
-  --color-indigo-light: #818CF8;
+  --color-indigo: #E6D17B;
+  --color-indigo-dark: #bba752;
+  --color-indigo-light: #f2e3a5;
 
-  --color-royal: #3B82F6;
-  --color-royal-dark: #2563EB;
-  --color-royal-light: #60A5FA;
+  --color-royal: #F1E49A;
+  --color-royal-dark: #cbbb6a;
+  --color-royal-light: #f8f1c4;
 
-  --color-cyan-accent: #06B6D4;
-  --color-cyan-light: #22D3EE;
-  --color-cyan-glow: #67E8F9;
+  --color-cyan-accent: #FEF4D5;
+  --color-cyan-light: #fffae8;
+  --color-cyan-glow: #ffffff;
 
-  --color-emerald: #10B981;
-  --color-emerald-dark: #059669;
-  --color-emerald-light: #34D399;
+  --color-emerald: #8fa682;
+  --color-emerald-dark: #6a7f5f;
+  --color-emerald-light: #b4c8a9;
 
-  --color-amber: #F59E0B;
-  --color-rose: #F43F5E;
+  --color-amber: #e6b97b;
+  --color-rose: #d6655c;
 
-  --color-surface-0: #09090B;
-  --color-surface-1: #111113;
-  --color-surface-2: #18181B;
-  --color-surface-3: #1E1E22;
-  --color-surface-4: #27272A;
+  --color-surface-0: #2c1810;
+  --color-surface-1: #331e15;
+  --color-surface-2: #3a2318;
+  --color-surface-3: #41281d;
+  --color-surface-4: #4a3023;
 
-  --color-text-primary: #FAFAFA;
-  --color-text-secondary: #A1A1AA;
-  --color-text-muted: #71717A;
+  --color-text-primary: #FEF4D5;
+  --color-text-secondary: #dcd2b8;
+  --color-text-muted: #b0a68d;
 
-  --color-border: rgba(63, 63, 70, 0.5);
-  --color-border-hover: rgba(99, 102, 241, 0.4);
+  --color-border: rgba(230, 209, 123, 0.2);
+  --color-border-hover: rgba(241, 228, 154, 0.4);
 
   /* ── Font Families ── */
   --font-heading: 'Sora', system-ui, sans-serif;
@@ -66,9 +66,9 @@
   /* ── Shadows ── */
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
   --shadow-elevated: 0 8px 40px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-glow-indigo: 0 0 20px rgba(99, 102, 241, 0.3), 0 0 60px rgba(99, 102, 241, 0.1);
-  --shadow-glow-cyan: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 60px rgba(6, 182, 212, 0.1);
-  --shadow-glow-emerald: 0 0 20px rgba(16, 185, 129, 0.3), 0 0 60px rgba(16, 185, 129, 0.1);
+  --shadow-glow-indigo: 0 0 20px rgba(230, 209, 123, 0.3), 0 0 60px rgba(230, 209, 123, 0.1);
+  --shadow-glow-cyan: 0 0 20px rgba(241, 228, 154, 0.3), 0 0 60px rgba(241, 228, 154, 0.1);
+  --shadow-glow-emerald: 0 0 20px rgba(254, 244, 213, 0.2), 0 0 60px rgba(254, 244, 213, 0.05);
 
   /* ── Transitions ── */
   --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
@@ -135,24 +135,24 @@ h1, h2, h3, h4, h5, h6 {
    ═══════════════════════════════════════════════════════ */
 
 .glass {
-  background: rgba(24, 24, 27, 0.6);
+  background: rgba(44, 24, 16, 0.6);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--color-border);
 }
 
 .glass-heavy {
-  background: rgba(24, 24, 27, 0.8);
+  background: rgba(44, 24, 16, 0.8);
   backdrop-filter: blur(40px) saturate(200%);
   -webkit-backdrop-filter: blur(40px) saturate(200%);
   border: 1px solid var(--color-border);
 }
 
 .glass-light {
-  background: rgba(24, 24, 27, 0.4);
+  background: rgba(44, 24, 16, 0.4);
   backdrop-filter: blur(12px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
-  border: 1px solid rgba(63, 63, 70, 0.3);
+  border: 1px solid rgba(230, 209, 123, 0.15);
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -249,7 +249,7 @@ h1, h2, h3, h4, h5, h6 {
 .bg-radial-glow {
   background: radial-gradient(
     ellipse 600px 400px at 50% 0%,
-    rgba(99, 102, 241, 0.12) 0%,
+    rgba(230, 209, 123, 0.1) 0%,
     transparent 70%
   );
 }
@@ -257,7 +257,7 @@ h1, h2, h3, h4, h5, h6 {
 .bg-radial-glow-cyan {
   background: radial-gradient(
     ellipse 600px 400px at 50% 0%,
-    rgba(6, 182, 212, 0.08) 0%,
+    rgba(241, 228, 154, 0.08) 0%,
     transparent 70%
   );
 }
@@ -762,17 +762,17 @@ h1, h2, h3, h4, h5, h6 {
   height: 200%;
   background: radial-gradient(
     circle 800px at 30% 20%,
-    rgba(99, 102, 241, 0.06) 0%,
+    rgba(230, 209, 123, 0.05) 0%,
     transparent 50%
   ),
   radial-gradient(
     circle 600px at 70% 60%,
-    rgba(6, 182, 212, 0.04) 0%,
+    rgba(241, 228, 154, 0.03) 0%,
     transparent 50%
   ),
   radial-gradient(
     circle 500px at 50% 80%,
-    rgba(16, 185, 129, 0.03) 0%,
+    rgba(254, 244, 213, 0.02) 0%,
     transparent 50%
   );
 }

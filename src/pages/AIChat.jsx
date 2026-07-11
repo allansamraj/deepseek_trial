@@ -62,8 +62,8 @@ export default function AIChat() {
               <div
                 className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(6, 182, 212, 0.15))',
-                  border: '1px solid rgba(99, 102, 241, 0.2)'
+                  background: 'linear-gradient(135deg, rgba(230, 209, 123, 0.15), rgba(254, 244, 213, 0.15))',
+                  border: '1px solid rgba(230, 209, 123, 0.2)'
                 }}
               >
                 <Brain
@@ -75,8 +75,8 @@ export default function AIChat() {
                 <svg width="0" height="0" style={{ position: 'absolute' }}>
                   <defs>
                     <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#6366F1" />
-                      <stop offset="100%" stopColor="#06B6D4" />
+                      <stop offset="0%" stopColor="#E6D17B" />
+                      <stop offset="100%" stopColor="#FEF4D5" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -88,7 +88,7 @@ export default function AIChat() {
               >
                 How can I help you today?
               </h1>
-              <p className="text-[#A1A1AA] text-sm mb-8">
+              <p className="text-[var(--color-text-secondary)] text-sm mb-8">
                 Ask me anything about your organization's knowledge base
               </p>
             </motion.div>
@@ -104,27 +104,27 @@ export default function AIChat() {
                 const Icon = suggestion.icon
                 return (
                   <motion.button
-                    key={idx}
+                    key={suggestion.text}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleSuggestionClick(suggestion.text)}
-                    className="flex items-start gap-3 p-4 rounded-xl text-left text-sm text-[#A1A1AA] transition-colors duration-200 cursor-pointer"
+                    className="flex items-start gap-3 p-4 rounded-xl text-left text-sm text-[var(--color-text-secondary)] transition-colors duration-200 cursor-pointer"
                     style={{
-                      background: 'rgba(24, 24, 27, 0.6)',
+                      background: 'rgba(44, 24, 16, 0.6)',
                       backdropFilter: 'blur(16px)',
                       WebkitBackdropFilter: 'blur(16px)',
-                      border: '1px solid rgba(63, 63, 70, 0.5)'
+                      border: '1px solid rgba(230, 209, 123, 0.25)'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.5)'
-                      e.currentTarget.style.color = '#E4E4E7'
+                      e.currentTarget.style.borderColor = 'rgba(241, 228, 154, 0.5)'
+                      e.currentTarget.style.color = '#FEF4D5'
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(63, 63, 70, 0.5)'
-                      e.currentTarget.style.color = '#A1A1AA'
+                      e.currentTarget.style.borderColor = 'rgba(230, 209, 123, 0.25)'
+                      e.currentTarget.style.color = 'var(--color-text-secondary)'
                     }}
                   >
-                    <Icon size={16} className="text-[#6366F1] flex-shrink-0 mt-0.5" />
+                    <Icon size={16} className="text-[#E6D17B] flex-shrink-0 mt-0.5" />
                     <span>{suggestion.text}</span>
                   </motion.button>
                 )
@@ -150,14 +150,14 @@ export default function AIChat() {
                 <div
                   className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{
-                    background: 'linear-gradient(135deg, #06B6D4, #6366F1)'
+                    background: 'linear-gradient(135deg, #FEF4D5, #E6D17B)'
                   }}
                 >
-                  <Brain size={16} className="text-white" />
+                  <Brain size={16} className="text-midnight" />
                 </div>
-                <div className="flex gap-1 px-4 py-3 rounded-2xl" style={{ backgroundColor: '#1E1E22', border: '1px solid rgba(63, 63, 70, 0.5)' }}>
+                <div className="flex gap-1 px-4 py-3 rounded-2xl" style={{ backgroundColor: '#3a2318', border: '1px solid rgba(230, 209, 123, 0.25)' }}>
                   <span
-                    className="w-2 h-2 rounded-full bg-[#71717A]"
+                    className="w-2 h-2 rounded-full bg-[#b0a68d]"
                     style={{
                       animation: 'typingDot 1.4s infinite ease-in-out',
                       animationDelay: '0s'

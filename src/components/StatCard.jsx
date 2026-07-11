@@ -10,10 +10,10 @@ export default function StatCard({ icon: Icon, title, value, trend, trendUp, col
       whileHover={{ y: -4, boxShadow: `0 0 20px ${color}30` }}
       className="relative overflow-hidden rounded-2xl border p-6"
       style={{
-        background: 'rgba(24, 24, 27, 0.6)',
+        background: 'rgba(44, 24, 16, 0.6)',
         backdropFilter: 'blur(24px)',
         WebkitBackdropFilter: 'blur(24px)',
-        borderColor: 'rgba(63, 63, 70, 0.5)',
+        borderColor: 'rgba(230, 209, 123, 0.25)',
       }}
     >
       {/* Subtle gradient glow */}
@@ -35,8 +35,8 @@ export default function StatCard({ icon: Icon, title, value, trend, trendUp, col
           <div
             className="flex items-center gap-1 rounded-full px-2 py-1 text-xs font-medium"
             style={{
-              backgroundColor: trendUp ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)',
-              color: trendUp ? '#10B981' : '#EF4444',
+              backgroundColor: trendUp ? 'rgba(143, 166, 130, 0.15)' : 'rgba(214, 101, 92, 0.15)',
+              color: trendUp ? '#8fa682' : '#d6655c',
             }}
           >
             {trendUp ? <TrendingUp size={12} /> : <TrendingDown size={12} />}
@@ -50,7 +50,7 @@ export default function StatCard({ icon: Icon, title, value, trend, trendUp, col
         </div>
 
         {/* Title */}
-        <div className="mt-1 text-sm" style={{ color: '#A1A1AA', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+        <div className="mt-1 text-sm" style={{ color: 'var(--color-text-secondary, #dcd2b8)', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
           {title}
         </div>
       </div>

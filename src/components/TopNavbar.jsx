@@ -31,9 +31,9 @@ export default function TopNavbar() {
     <header
       className="h-16 shrink-0 flex items-center justify-between px-6 z-30 relative"
       style={{
-        background: 'rgba(9, 9, 11, 0.8)',
+        background: 'rgba(44, 24, 16, 0.8)',
         backdropFilter: 'blur(20px)',
-        borderBottom: '1px solid rgba(63, 63, 70, 0.3)',
+        borderBottom: '1px solid rgba(230, 209, 123, 0.15)',
       }}
     >
       {/* Search */}
@@ -51,14 +51,14 @@ export default function TopNavbar() {
           onBlur={() => setSearchFocused(false)}
           className="input pl-10 py-2 text-sm"
           style={{
-            background: 'rgba(24, 24, 27, 0.6)',
-            borderColor: searchFocused ? '#6366F1' : 'rgba(63, 63, 70, 0.5)',
-            boxShadow: searchFocused ? '0 0 0 3px rgba(99, 102, 241, 0.15)' : 'none',
+            background: 'rgba(44, 24, 16, 0.6)',
+            borderColor: searchFocused ? '#E6D17B' : 'rgba(230, 209, 123, 0.25)',
+            boxShadow: searchFocused ? '0 0 0 3px rgba(241, 228, 154, 0.15)' : 'none',
           }}
         />
         <kbd
           className="absolute right-3 top-1/2 -translate-y-1/2 text-xs px-1.5 py-0.5 rounded"
-          style={{ background: 'rgba(63, 63, 70, 0.5)', color: '#71717A' }}
+          style={{ background: 'rgba(230, 209, 123, 0.25)', color: 'var(--color-text-secondary, #dcd2b8)' }}
         >
           ⌘K
         </kbd>
@@ -123,13 +123,13 @@ export default function TopNavbar() {
                 transition={{ duration: 0.2 }}
                 className="absolute right-0 top-12 w-80 rounded-xl overflow-hidden z-50"
                 style={{
-                  background: 'rgba(24, 24, 27, 0.95)',
+                  background: 'rgba(44, 24, 16, 0.95)',
                   backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(63, 63, 70, 0.5)',
+                  border: '1px solid rgba(230, 209, 123, 0.25)',
                   boxShadow: '0 8px 40px rgba(0,0,0,0.4)',
                 }}
               >
-                <div className="flex items-center justify-between p-4 border-b" style={{ borderColor: 'rgba(63, 63, 70, 0.5)' }}>
+                <div className="flex items-center justify-between p-4 border-b" style={{ borderColor: 'rgba(230, 209, 123, 0.25)' }}>
                   <h3 className="text-sm font-semibold">Notifications</h3>
                   <button onClick={() => setShowNotifications(false)} className="text-slate-subtle hover:text-white">
                     <X size={16} />
@@ -142,8 +142,8 @@ export default function TopNavbar() {
                       onClick={() => markNotificationRead(n.id)}
                       className="px-4 py-3 cursor-pointer hover:bg-surface-3 transition-colors border-b"
                       style={{
-                        borderColor: 'rgba(63, 63, 70, 0.3)',
-                        background: !n.read ? 'rgba(99, 102, 241, 0.05)' : 'transparent',
+                        borderColor: 'rgba(230, 209, 123, 0.15)',
+                        background: !n.read ? 'rgba(230, 209, 123, 0.05)' : 'transparent',
                       }}
                     >
                       <p className="text-sm font-medium">{n.title}</p>
@@ -163,10 +163,10 @@ export default function TopNavbar() {
             onClick={() => setShowProfile(!showProfile)}
             className="w-9 h-9 rounded-full flex items-center justify-center"
             style={{
-              background: 'linear-gradient(135deg, #6366F1, #3B82F6)',
+              background: 'linear-gradient(135deg, #E6D17B, #F1E49A)',
             }}
           >
-            <User size={16} className="text-white" />
+            <User size={16} className="text-midnight" />
           </button>
 
           <AnimatePresence>
@@ -178,13 +178,13 @@ export default function TopNavbar() {
                 transition={{ duration: 0.2 }}
                 className="absolute right-0 top-12 w-56 rounded-xl overflow-hidden z-50"
                 style={{
-                  background: 'rgba(24, 24, 27, 0.95)',
+                  background: 'rgba(44, 24, 16, 0.95)',
                   backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(63, 63, 70, 0.5)',
+                  border: '1px solid rgba(230, 209, 123, 0.25)',
                   boxShadow: '0 8px 40px rgba(0,0,0,0.4)',
                 }}
               >
-                <div className="p-4 border-b" style={{ borderColor: 'rgba(63, 63, 70, 0.5)' }}>
+                <div className="p-4 border-b" style={{ borderColor: 'rgba(230, 209, 123, 0.25)' }}>
                   <p className="text-sm font-semibold">Admin User</p>
                   <p className="text-xs text-slate-subtle">admin@deepseek.ai</p>
                 </div>
