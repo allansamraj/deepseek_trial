@@ -35,11 +35,11 @@ const activityData = [
 ];
 
 const recentDocuments = [
-  { name: 'Q3 Revenue Report', department: 'Finance', date: 'Jul 8, 2026', color: '#F1E49A' },
-  { name: 'Employee Handbook v3', department: 'HR', date: 'Jul 7, 2026', color: '#8fa682' },
-  { name: 'IT Security Policy', department: 'IT', date: 'Jul 6, 2026', color: '#E6D17B' },
-  { name: 'Marketing Strategy 2025', department: 'Marketing', date: 'Jul 5, 2026', color: '#e6b97b' },
-  { name: 'HR Leave Guidelines', department: 'HR', date: 'Jul 4, 2026', color: '#8fa682' },
+  { name: 'Q3 Revenue Report', department: 'Finance', date: 'Jul 8, 2026', color: '#3B82F6' },
+  { name: 'Employee Handbook v3', department: 'HR', date: 'Jul 7, 2026', color: '#8B5CF6' },
+  { name: 'IT Security Policy', department: 'IT', date: 'Jul 6, 2026', color: '#06B6D4' },
+  { name: 'Marketing Strategy 2025', department: 'Marketing', date: 'Jul 5, 2026', color: '#F59E0B' },
+  { name: 'HR Leave Guidelines', department: 'HR', date: 'Jul 4, 2026', color: '#8B5CF6' },
 ];
 
 const knowledgeGaps = [
@@ -74,9 +74,9 @@ function formatDate() {
 }
 
 function getGapColor(searches) {
-  if (searches >= 60) return '#d6655c';
-  if (searches >= 35) return '#e6b97b';
-  return '#b0a68d';
+  if (searches >= 60) return '#F43F5E';
+  if (searches >= 35) return '#F59E0B';
+  return '#71717A';
 }
 
 // --- Glass card wrapper ---
@@ -85,10 +85,10 @@ function GlassCard({ children, className = '' }) {
     <div
       className={`overflow-hidden rounded-2xl border p-6 ${className}`}
       style={{
-        background: 'rgba(44, 24, 16, 0.6)',
+        background: 'rgba(17, 17, 24, 0.6)',
         backdropFilter: 'blur(24px)',
         WebkitBackdropFilter: 'blur(24px)',
-        borderColor: 'rgba(230, 209, 123, 0.25)',
+        borderColor: 'rgba(63, 63, 70, 0.5)',
       }}
     >
       {children}
@@ -103,12 +103,12 @@ function CustomTooltip({ active, payload, label }) {
     <div
       className="rounded-xl border px-4 py-3"
       style={{
-        background: 'rgba(44, 24, 16, 0.95)',
+        background: 'rgba(17, 17, 24, 0.95)',
         backdropFilter: 'blur(12px)',
-        borderColor: 'rgba(230, 209, 123, 0.25)',
+        borderColor: 'rgba(63, 63, 70, 0.5)',
       }}
     >
-      <p className="mb-1 text-xs font-medium" style={{ color: '#b0a68d' }}>
+      <p className="mb-1 text-xs font-medium" style={{ color: '#A1A1AA' }}>
         {label}
       </p>
       {payload.map((entry, i) => (
@@ -148,21 +148,21 @@ export default function Dashboard() {
         <div
           className="flex w-fit items-center gap-2 rounded-full border px-4 py-2"
           style={{
-            background: 'rgba(143, 166, 130, 0.1)',
-            borderColor: 'rgba(143, 166, 130, 0.3)',
+            background: 'rgba(16, 185, 129, 0.1)',
+            borderColor: 'rgba(16, 185, 129, 0.3)',
           }}
         >
           <span className="relative flex h-2.5 w-2.5">
             <span
               className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-              style={{ backgroundColor: '#8fa682' }}
+              style={{ backgroundColor: '#10B981' }}
             />
             <span
               className="relative inline-flex h-2.5 w-2.5 rounded-full"
-              style={{ backgroundColor: '#8fa682' }}
+              style={{ backgroundColor: '#10B981' }}
             />
           </span>
-          <span className="text-sm font-medium" style={{ color: '#8fa682' }}>
+          <span className="text-sm font-medium" style={{ color: '#10B981' }}>
             AI System Online
           </span>
         </div>
@@ -176,7 +176,7 @@ export default function Dashboard() {
           value="2,847"
           trend="+12.5%"
           trendUp={true}
-          color="#F1E49A"
+          color="#3B82F6"
           delay={0.1}
         />
         <StatCard
@@ -185,7 +185,7 @@ export default function Dashboard() {
           value="1,284"
           trend="+8.3%"
           trendUp={true}
-          color="#E6D17B"
+          color="#6366F1"
           delay={0.2}
         />
         <StatCard
@@ -194,7 +194,7 @@ export default function Dashboard() {
           value="98.6%"
           trend="+2.1%"
           trendUp={true}
-          color="#8fa682"
+          color="#10B981"
           delay={0.3}
         />
         <StatCard
@@ -203,7 +203,7 @@ export default function Dashboard() {
           value="342"
           trend="+15.7%"
           trendUp={true}
-          color="#FEF4D5"
+          color="#06B6D4"
           delay={0.4}
         />
       </div>
@@ -222,9 +222,9 @@ export default function Dashboard() {
               <div className="flex items-center gap-3">
                 <div
                   className="flex h-10 w-10 items-center justify-center rounded-xl"
-                  style={{ backgroundColor: 'rgba(230, 209, 123, 0.15)' }}
+                  style={{ backgroundColor: 'rgba(99, 102, 241, 0.15)' }}
                 >
-                  <BarChart3 size={20} style={{ color: '#E6D17B' }} />
+                  <BarChart3 size={20} style={{ color: '#6366F1' }} />
                 </div>
                 <div>
                   <h3
@@ -244,23 +244,23 @@ export default function Dashboard() {
               <AreaChart data={activityData} margin={{ top: 5, right: 10, left: -10, bottom: 0 }}>
                 <defs>
                   <linearGradient id="queriesGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#E6D17B" stopOpacity={0.3} />
-                    <stop offset="100%" stopColor="#E6D17B" stopOpacity={0} />
+                    <stop offset="0%" stopColor="#6366F1" stopOpacity={0.3} />
+                    <stop offset="100%" stopColor="#6366F1" stopOpacity={0} />
                   </linearGradient>
                   <linearGradient id="docsGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#FEF4D5" stopOpacity={0.3} />
-                    <stop offset="100%" stopColor="#FEF4D5" stopOpacity={0} />
+                    <stop offset="0%" stopColor="#06B6D4" stopOpacity={0.3} />
+                    <stop offset="100%" stopColor="#06B6D4" stopOpacity={0} />
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(230, 209, 123, 0.15)" />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(63, 63, 70, 0.15)" />
                 <XAxis
                   dataKey="name"
-                  tick={{ fill: '#8a6857', fontSize: 12 }}
+                  tick={{ fill: '#71717A', fontSize: 12 }}
                   axisLine={false}
                   tickLine={false}
                 />
                 <YAxis
-                  tick={{ fill: '#8a6857', fontSize: 12 }}
+                  tick={{ fill: '#71717A', fontSize: 12 }}
                   axisLine={false}
                   tickLine={false}
                 />
@@ -268,7 +268,7 @@ export default function Dashboard() {
                 <Area
                   type="monotone"
                   dataKey="queries"
-                  stroke="#E6D17B"
+                  stroke="#6366F1"
                   strokeWidth={2}
                   fill="url(#queriesGradient)"
                   name="Queries"
@@ -276,7 +276,7 @@ export default function Dashboard() {
                 <Area
                   type="monotone"
                   dataKey="docs"
-                  stroke="#FEF4D5"
+                  stroke="#06B6D4"
                   strokeWidth={2}
                   fill="url(#docsGradient)"
                   name="Documents"
@@ -297,9 +297,9 @@ export default function Dashboard() {
             <div className="mb-4 flex items-center gap-3">
               <div
                 className="flex h-10 w-10 items-center justify-center rounded-xl"
-                style={{ backgroundColor: 'rgba(143, 166, 130, 0.15)' }}
+                style={{ backgroundColor: 'rgba(16, 185, 129, 0.15)' }}
               >
-                <Sparkles size={20} style={{ color: '#8fa682' }} />
+                <Sparkles size={20} style={{ color: '#10B981' }} />
               </div>
               <h3
                 className="text-lg font-semibold text-white"
@@ -318,14 +318,14 @@ export default function Dashboard() {
               {healthMetrics.map((metric) => (
                 <div key={metric.label}>
                   <div className="mb-1 flex items-center justify-between">
-                    <span className="text-sm" style={{ color: 'var(--color-text-secondary, #dcd2b8)' }}>
+                    <span className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
                       {metric.label}
                     </span>
                     <span className="text-sm font-semibold text-white">{metric.value}%</span>
                   </div>
                   <div
                     className="h-1.5 w-full overflow-hidden rounded-full"
-                    style={{ backgroundColor: '#3d251c' }}
+                    style={{ backgroundColor: '#1E1E24' }}
                   >
                     <motion.div
                       className="h-full rounded-full"
@@ -333,7 +333,7 @@ export default function Dashboard() {
                       animate={{ width: `${metric.value}%` }}
                       transition={{ duration: 1.2, delay: 0.6, ease: 'easeOut' }}
                       style={{
-                        background: `linear-gradient(90deg, #E6D17B, #FEF4D5)`,
+                        background: 'linear-gradient(90deg, #6366F1, #06B6D4)',
                       }}
                     />
                   </div>
@@ -356,9 +356,9 @@ export default function Dashboard() {
             <div className="mb-5 flex items-center gap-3">
               <div
                 className="flex h-10 w-10 items-center justify-center rounded-xl"
-                style={{ backgroundColor: 'rgba(241, 228, 154, 0.15)' }}
+                style={{ backgroundColor: 'rgba(6, 182, 212, 0.15)' }}
               >
-                <FileText size={20} style={{ color: '#F1E49A' }} />
+                <FileText size={20} style={{ color: '#06B6D4' }} />
               </div>
               <h3
                 className="text-lg font-semibold text-white"
@@ -462,19 +462,19 @@ export default function Dashboard() {
                       {gap.searches} searches
                     </span>
                     <button
-                      className="rounded-lg border px-3 py-1 text-xs font-medium opacity-0 transition-all group-hover:opacity-100"
+                      className="rounded-lg border px-3 py-1 text-xs font-medium opacity-0 transition-all group-hover:opacity-100 cursor-pointer"
                       style={{
-                        borderColor: 'rgba(230, 209, 123, 0.25)',
-                        color: 'var(--color-text-secondary, #dcd2b8)',
+                        borderColor: 'rgba(63, 63, 70, 0.5)',
+                        color: 'var(--color-text-secondary)',
                         background: 'transparent',
                       }}
                       onMouseOver={(e) => {
-                        e.currentTarget.style.borderColor = '#E6D17B';
-                        e.currentTarget.style.color = '#E6D17B';
+                        e.currentTarget.style.borderColor = '#6366F1';
+                        e.currentTarget.style.color = '#6366F1';
                       }}
                       onMouseOut={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(230, 209, 123, 0.25)';
-                        e.currentTarget.style.color = 'var(--color-text-secondary, #dcd2b8)';
+                        e.currentTarget.style.borderColor = 'rgba(63, 63, 70, 0.5)';
+                        e.currentTarget.style.color = 'var(--color-text-secondary)';
                       }}
                     >
                       Generate Draft

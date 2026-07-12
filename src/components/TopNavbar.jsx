@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { Search, Bell, Wifi, WifiOff, User, X } from 'lucide-react'
 import { useApp } from '../context/AppContext'
+import CommandPalette from './CommandPalette'
 
 export default function TopNavbar() {
   const { aiStatus, notifications, markNotificationRead } = useApp()
@@ -9,6 +10,7 @@ export default function TopNavbar() {
   const [searchFocused, setSearchFocused] = useState(false)
   const [showNotifications, setShowNotifications] = useState(false)
   const [showProfile, setShowProfile] = useState(false)
+  const [showCommandPalette, setShowCommandPalette] = useState(false)
   const notifRef = useRef(null)
   const profileRef = useRef(null)
 
@@ -23,17 +25,27 @@ export default function TopNavbar() {
         setShowProfile(false)
       }
     }
+    const handleGlobalKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault()
+        setShowCommandPalette(prev => !prev)
+      }
+    }
     document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
+    window.addEventListener('keydown', handleGlobalKeyDown)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      window.removeEventListener('keydown', handleGlobalKeyDown)
+    }
+  }, [notifications])
 
   return (
     <header
       className="h-16 shrink-0 flex items-center justify-between px-6 z-30 relative"
       style={{
-        background: 'rgba(44, 24, 16, 0.8)',
+        background: 'rgba(17, 17, 24, 0.8)',
         backdropFilter: 'blur(20px)',
-        borderBottom: '1px solid rgba(230, 209, 123, 0.15)',
+        borderBottom: '1px solid rgba(63, 63, 70, 0.5)',
       }}
     >
       {/* Search */}
@@ -44,21 +56,22 @@ export default function TopNavbar() {
         />
         <input
           type="text"
-          placeholder="Search knowledge base..."
+          placeholder="Search knowledge base... (⌘K)"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          onFocus={() => setSearchFocused(true)}
-          onBlur={() => setSearchFocused(false)}
-          className="input pl-10 py-2 text-sm"
+          onFocus={(e) => {
+            e.target.blur()
+            setShowCommandPalette(true)
+          }}
+          className="input pl-10 py-2 text-sm cursor-pointer"
           style={{
-            background: 'rgba(44, 24, 16, 0.6)',
-            borderColor: searchFocused ? '#E6D17B' : 'rgba(230, 209, 123, 0.25)',
-            boxShadow: searchFocused ? '0 0 0 3px rgba(241, 228, 154, 0.15)' : 'none',
+            background: 'rgba(17, 17, 24, 0.6)',
+            borderColor: 'rgba(63, 63, 70, 0.5)',
           }}
         />
         <kbd
-          className="absolute right-3 top-1/2 -translate-y-1/2 text-xs px-1.5 py-0.5 rounded"
-          style={{ background: 'rgba(230, 209, 123, 0.25)', color: 'var(--color-text-secondary, #dcd2b8)' }}
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-xs px-1.5 py-0.5 rounded pointer-events-none"
+          style={{ background: 'rgba(63, 63, 70, 0.5)', color: 'var(--color-text-secondary, #A1A1AA)' }}
         >
           ⌘K
         </kbd>
@@ -123,13 +136,13 @@ export default function TopNavbar() {
                 transition={{ duration: 0.2 }}
                 className="absolute right-0 top-12 w-80 rounded-xl overflow-hidden z-50"
                 style={{
-                  background: 'rgba(44, 24, 16, 0.95)',
+                  background: 'rgba(17, 17, 24, 0.95)',
                   backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(230, 209, 123, 0.25)',
+                  border: '1px solid rgba(63, 63, 70, 0.5)',
                   boxShadow: '0 8px 40px rgba(0,0,0,0.4)',
                 }}
               >
-                <div className="flex items-center justify-between p-4 border-b" style={{ borderColor: 'rgba(230, 209, 123, 0.25)' }}>
+                <div className="flex items-center justify-between p-4 border-b" style={{ borderColor: 'rgba(63, 63, 70, 0.5)' }}>
                   <h3 className="text-sm font-semibold">Notifications</h3>
                   <button onClick={() => setShowNotifications(false)} className="text-slate-subtle hover:text-white">
                     <X size={16} />
@@ -142,8 +155,8 @@ export default function TopNavbar() {
                       onClick={() => markNotificationRead(n.id)}
                       className="px-4 py-3 cursor-pointer hover:bg-surface-3 transition-colors border-b"
                       style={{
-                        borderColor: 'rgba(230, 209, 123, 0.15)',
-                        background: !n.read ? 'rgba(230, 209, 123, 0.05)' : 'transparent',
+                        borderColor: 'rgba(63, 63, 70, 0.3)',
+                        background: !n.read ? 'rgba(99, 102, 241, 0.05)' : 'transparent',
                       }}
                     >
                       <p className="text-sm font-medium">{n.title}</p>
@@ -163,10 +176,10 @@ export default function TopNavbar() {
             onClick={() => setShowProfile(!showProfile)}
             className="w-9 h-9 rounded-full flex items-center justify-center"
             style={{
-              background: 'linear-gradient(135deg, #E6D17B, #F1E49A)',
+              background: 'linear-gradient(135deg, #6366F1, #3B82F6)',
             }}
           >
-            <User size={16} className="text-midnight" />
+            <User size={16} className="text-white" />
           </button>
 
           <AnimatePresence>
@@ -178,13 +191,13 @@ export default function TopNavbar() {
                 transition={{ duration: 0.2 }}
                 className="absolute right-0 top-12 w-56 rounded-xl overflow-hidden z-50"
                 style={{
-                  background: 'rgba(44, 24, 16, 0.95)',
+                  background: 'rgba(17, 17, 24, 0.95)',
                   backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(230, 209, 123, 0.25)',
+                  border: '1px solid rgba(63, 63, 70, 0.5)',
                   boxShadow: '0 8px 40px rgba(0,0,0,0.4)',
                 }}
               >
-                <div className="p-4 border-b" style={{ borderColor: 'rgba(230, 209, 123, 0.25)' }}>
+                <div className="p-4 border-b" style={{ borderColor: 'rgba(63, 63, 70, 0.5)' }}>
                   <p className="text-sm font-semibold">Admin User</p>
                   <p className="text-xs text-slate-subtle">admin@deepseek.ai</p>
                 </div>
@@ -204,6 +217,7 @@ export default function TopNavbar() {
           </AnimatePresence>
         </div>
       </div>
+      <CommandPalette isOpen={showCommandPalette} onClose={() => setShowCommandPalette(false)} />
     </header>
   )
 }

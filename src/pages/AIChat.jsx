@@ -62,8 +62,8 @@ export default function AIChat() {
               <div
                 className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(230, 209, 123, 0.15), rgba(254, 244, 213, 0.15))',
-                  border: '1px solid rgba(230, 209, 123, 0.2)'
+                  background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(6, 182, 212, 0.15))',
+                  border: '1px solid rgba(99, 102, 241, 0.2)'
                 }}
               >
                 <Brain
@@ -75,8 +75,8 @@ export default function AIChat() {
                 <svg width="0" height="0" style={{ position: 'absolute' }}>
                   <defs>
                     <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#E6D17B" />
-                      <stop offset="100%" stopColor="#FEF4D5" />
+                      <stop offset="0%" stopColor="#6366F1" />
+                      <stop offset="100%" stopColor="#06B6D4" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -110,21 +110,21 @@ export default function AIChat() {
                     onClick={() => handleSuggestionClick(suggestion.text)}
                     className="flex items-start gap-3 p-4 rounded-xl text-left text-sm text-[var(--color-text-secondary)] transition-colors duration-200 cursor-pointer"
                     style={{
-                      background: 'rgba(44, 24, 16, 0.6)',
+                      background: 'rgba(17, 17, 24, 0.6)',
                       backdropFilter: 'blur(16px)',
                       WebkitBackdropFilter: 'blur(16px)',
-                      border: '1px solid rgba(230, 209, 123, 0.25)'
+                      border: '1px solid rgba(63, 63, 70, 0.5)'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(241, 228, 154, 0.5)'
-                      e.currentTarget.style.color = '#FEF4D5'
+                      e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.5)'
+                      e.currentTarget.style.color = '#F4F4F5'
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(230, 209, 123, 0.25)'
+                      e.currentTarget.style.borderColor = 'rgba(63, 63, 70, 0.5)'
                       e.currentTarget.style.color = 'var(--color-text-secondary)'
                     }}
                   >
-                    <Icon size={16} className="text-[#E6D17B] flex-shrink-0 mt-0.5" />
+                    <Icon size={16} className="text-[#6366F1] flex-shrink-0 mt-0.5" />
                     <span>{suggestion.text}</span>
                   </motion.button>
                 )
@@ -150,14 +150,14 @@ export default function AIChat() {
                 <div
                   className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{
-                    background: 'linear-gradient(135deg, #FEF4D5, #E6D17B)'
+                    background: 'linear-gradient(135deg, #6366F1, #06B6D4)'
                   }}
                 >
-                  <Brain size={16} className="text-midnight" />
+                  <Brain size={16} className="text-white" />
                 </div>
-                <div className="flex gap-1 px-4 py-3 rounded-2xl" style={{ backgroundColor: '#3a2318', border: '1px solid rgba(230, 209, 123, 0.25)' }}>
+                <div className="flex gap-1 px-4 py-3 rounded-2xl" style={{ backgroundColor: 'rgba(17, 17, 24, 0.8)', border: '1px solid rgba(63, 63, 70, 0.5)' }}>
                   <span
-                    className="w-2 h-2 rounded-full bg-[#b0a68d]"
+                    className="w-2 h-2 rounded-full bg-[#6366F1]"
                     style={{
                       animation: 'typingDot 1.4s infinite ease-in-out',
                       animationDelay: '0s'

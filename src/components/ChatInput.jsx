@@ -38,14 +38,14 @@ export default function ChatInput({ onSend, isStreaming, onStop }) {
       <div
         className="flex items-end p-3 rounded-2xl transition-all duration-200"
         style={{
-          background: 'rgba(44, 24, 16, 0.8)',
-          border: `1px solid ${isFocused ? 'rgba(241, 228, 154, 0.5)' : 'rgba(230, 209, 123, 0.25)'}`,
-          boxShadow: isFocused ? '0 0 20px rgba(241, 228, 154, 0.1)' : 'none'
+          background: 'rgba(17, 17, 24, 0.8)',
+          border: `1px solid ${isFocused ? 'rgba(99, 102, 241, 0.5)' : 'rgba(63, 63, 70, 0.5)'}`,
+          boxShadow: isFocused ? '0 0 20px rgba(99, 102, 241, 0.1)' : 'none'
         }}
       >
         {/* Attach Button */}
         <button
-          className="p-2 rounded-lg transition-colors duration-150 text-[#b0a68d] hover:text-[#FEF4D5] hover:bg-[#4a3023] flex-shrink-0"
+          className="p-2 rounded-lg transition-colors duration-150 text-[#71717A] hover:text-[#F4F4F5] hover:bg-[#27272A] flex-shrink-0"
           title="Attach file"
         >
           <Paperclip size={18} />
@@ -65,13 +65,13 @@ export default function ChatInput({ onSend, isStreaming, onStop }) {
           style={{
             minHeight: '40px',
             maxHeight: '200px',
-            caretColor: '#E6D17B'
+            caretColor: '#6366F1'
           }}
         />
 
         {/* Mic Button */}
         <button
-          className="p-2 rounded-lg transition-colors duration-150 text-[#b0a68d] hover:text-[#FEF4D5] hover:bg-[#4a3023] flex-shrink-0"
+          className="p-2 rounded-lg transition-colors duration-150 text-[#71717A] hover:text-[#F4F4F5] hover:bg-[#27272A] flex-shrink-0"
           title="Voice input"
         >
           <Mic size={18} />
@@ -93,14 +93,14 @@ export default function ChatInput({ onSend, isStreaming, onStop }) {
             className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-150 ml-1"
             style={{
               background: hasText
-                ? 'linear-gradient(135deg, #E6D17B, #F1E49A)'
-                : 'rgba(230, 209, 123, 0.25)',
+                ? 'linear-gradient(135deg, #6366F1, #3B82F6)'
+                : 'rgba(63, 63, 70, 0.5)',
               opacity: hasText ? 1 : 0.5,
               cursor: hasText ? 'pointer' : 'not-allowed'
             }}
             title="Send message"
           >
-            <ArrowUp size={16} className="text-midnight" />
+            <ArrowUp size={16} className="text-white" />
           </button>
         )}
       </div>
