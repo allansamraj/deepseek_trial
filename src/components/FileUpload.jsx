@@ -139,7 +139,7 @@ export default function FileUpload({ onUpload, onClose }) {
               }}
             >
               <div className="flex items-center gap-3 min-w-0">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[rgba(99,102,241,0.12)]">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[rgba(255,101,0,0.12)]">
                   <FileText size={16} className="text-indigo" />
                 </div>
                 <div className="min-w-0">
@@ -166,7 +166,7 @@ export default function FileUpload({ onUpload, onClose }) {
           <motion.div
             className="h-full rounded-full"
             style={{
-              background: 'linear-gradient(90deg, #6366F1, #06B6D4)',
+              background: 'linear-gradient(90deg, #FF6500, #FF6500)',
             }}
             initial={{ width: '0%' }}
             animate={{ width: `${progress}%` }}

@@ -35,14 +35,14 @@ export default function Sidebar() {
       className="fixed left-0 top-0 bottom-0 z-40 flex flex-col glass-heavy"
       animate={{ width: sidebarOpen ? 260 : 72 }}
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      style={{ borderRight: '1px solid rgba(63, 63, 70, 0.5)' }}
+      style={{ borderRight: '1px solid rgba(30, 62, 98, 0.45)' }}
     >
       {/* Logo */}
       <div className="flex items-center gap-3 px-5 h-16 shrink-0">
         <div
-          className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+          className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 animate-pulse-glow"
           style={{
-            background: 'linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)',
+            background: 'linear-gradient(135deg, #FF6500 0%, #1E3E62 100%)',
           }}
         >
           <Sparkles size={20} className="text-white" />
@@ -52,7 +52,7 @@ export default function Sidebar() {
             initial={{ opacity: 0, x: -8 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -8 }}
-            className="text-lg font-bold tracking-tight"
+            className="text-lg font-bold tracking-tight text-white"
             style={{ fontFamily: 'Sora, sans-serif' }}
           >
             DeepSeek
@@ -71,7 +71,7 @@ export default function Sidebar() {
               className={`sidebar-link ${isActive ? 'active' : ''}`}
               title={!sidebarOpen ? item.label : undefined}
             >
-              <item.icon size={20} className="shrink-0" />
+              <item.icon size={20} className="shrink-0" style={{ color: isActive ? '#FF6500' : 'inherit' }} />
               {sidebarOpen && (
                 <motion.span
                   initial={{ opacity: 0 }}
@@ -85,7 +85,10 @@ export default function Sidebar() {
                 <motion.div
                   layoutId="sidebar-active"
                   className="absolute inset-0 rounded-lg"
-                  style={{ background: 'rgba(99, 102, 241, 0.12)' }}
+                  style={{
+                    background: 'rgba(255, 101, 0, 0.08)',
+                    borderLeft: '3.5px solid #FF6500'
+                  }}
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 />
               )}
@@ -95,7 +98,7 @@ export default function Sidebar() {
       </nav>
 
       {/* Collapse toggle */}
-      <div className="px-3 py-4 border-t" style={{ borderColor: 'rgba(63, 63, 70, 0.5)' }}>
+      <div className="px-3 py-4 border-t" style={{ borderColor: 'rgba(30, 62, 98, 0.45)' }}>
         <button
           onClick={toggleSidebar}
           className="sidebar-link w-full justify-center"

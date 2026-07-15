@@ -47,9 +47,9 @@ export default function GradientButton({
   }
 
   const variantStyles = {
-    primary: 'bg-gradient-to-r from-[#6366F1] to-[#3B82F6] text-white border-none hover:shadow-[0_0_25px_rgba(99,102,241,0.4)]',
-    secondary: 'bg-[#18181B] text-[#F4F4F5] border border-[rgba(63,63,70,0.5)] hover:border-[#6366F1] hover:bg-[#1E1E24]',
-    outline: 'bg-transparent text-[#6366F1] border-2 border-[#6366F1] hover:bg-[rgba(99,102,241,0.05)]'
+    primary: 'bg-gradient-to-r from-[#FF6500] to-[#1E3E62] text-white border-none hover:shadow-[0_0_25px_rgba(255,101,0,0.4)]',
+    secondary: 'bg-[#18181B] text-[#F4F4F5] border border-[rgba(30,62,98,0.5)] hover:border-[#FF6500] hover:bg-[#1E1E24]',
+    outline: 'bg-transparent text-[#FF6500] border-2 border-[#FF6500] hover:bg-[rgba(255,101,0,0.05)]'
   }
 
   const glowStyle = glowing

@@ -35,8 +35,8 @@ const models = [
 const techBadges = [
   { name: 'React', color: '#61DAFB', bg: 'rgba(97, 218, 251, 0.12)' },
   { name: 'FastAPI', color: '#009688', bg: 'rgba(0, 150, 136, 0.12)' },
-  { name: 'FAISS', color: '#6366F1', bg: 'rgba(99, 102, 241, 0.12)' },
-  { name: 'OpenRouter', color: '#F59E0B', bg: 'rgba(245, 158, 11, 0.12)' },
+  { name: 'FAISS', color: '#FF6500', bg: 'rgba(255, 101, 0, 0.12)' },
+  { name: 'OpenRouter', color: '#FF6500', bg: 'rgba(245, 158, 11, 0.12)' },
 ]
 
 export default function Settings() {
@@ -87,9 +87,9 @@ export default function Settings() {
   }
 
   const statusConfig = {
-    connected: { icon: CheckCircle2, color: '#10B981', label: 'Connected', bg: 'rgba(16, 185, 129, 0.12)' },
+    connected: { icon: CheckCircle2, color: '#FF6500', label: 'Connected', bg: 'rgba(255, 101, 0, 0.12)' },
     disconnected: { icon: XCircle, color: '#F43F5E', label: 'Disconnected', bg: 'rgba(244, 63, 94, 0.12)' },
-    testing: { icon: Loader2, color: '#F59E0B', label: 'Testing...', bg: 'rgba(245, 158, 11, 0.12)' },
+    testing: { icon: Loader2, color: '#FF6500', label: 'Testing...', bg: 'rgba(245, 158, 11, 0.12)' },
   }
 
   const StatusIcon = statusConfig[connectionStatus].icon
@@ -113,7 +113,7 @@ export default function Settings() {
         style={{ boxShadow: 'var(--shadow-card)' }}
       >
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[rgba(99,102,241,0.12)]">
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[rgba(255,101,0,0.12)]">
             <Bot size={20} className="text-indigo" />
           </div>
           <div>
@@ -158,7 +158,7 @@ export default function Settings() {
                   key={m.value}
                   className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all ${
                     settings.model === m.value
-                      ? 'bg-[rgba(99,102,241,0.1)] border border-[rgba(99,102,241,0.3)]'
+                      ? 'bg-[rgba(255,101,0,0.1)] border border-[rgba(255,101,0,0.3)]'
                       : 'border border-transparent hover:bg-[rgba(39,39,42,0.5)]'
                   }`}
                 >
@@ -186,8 +186,8 @@ export default function Settings() {
                     <span
                       className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
                       style={{
-                        background: m.badge === 'Default' ? 'rgba(99, 102, 241, 0.15)' : 'rgba(245, 158, 11, 0.15)',
-                        color: m.badge === 'Default' ? '#818CF8' : '#FBBF24',
+                        background: m.badge === 'Default' ? 'rgba(255, 101, 0, 0.15)' : 'rgba(245, 158, 11, 0.15)',
+                        color: m.badge === 'Default' ? '#FF8233' : '#FBBF24',
                       }}
                     >
                       {m.badge}
@@ -214,7 +214,7 @@ export default function Settings() {
               onChange={(e) => updateSetting('temperature', parseFloat(e.target.value))}
               className="w-full h-1.5 rounded-full appearance-none cursor-pointer"
               style={{
-                background: `linear-gradient(to right, #6366F1 0%, #6366F1 ${settings.temperature * 100}%, #27272A ${settings.temperature * 100}%, #27272A 100%)`,
+                background: `linear-gradient(to right, #FF6500 0%, #FF6500 ${settings.temperature * 100}%, #27272A ${settings.temperature * 100}%, #27272A 100%)`,
               }}
             />
             <div className="flex justify-between text-[10px] text-[#52525B] mt-1">
@@ -273,7 +273,7 @@ export default function Settings() {
         style={{ boxShadow: 'var(--shadow-card)' }}
       >
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[rgba(6,182,212,0.12)]">
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[rgba(30,62,98,0.12)]">
             <Volume2 size={20} className="text-cyan-accent" />
           </div>
           <div>
@@ -324,7 +324,7 @@ export default function Settings() {
               onChange={(e) => updateSetting('speechRate', parseFloat(e.target.value))}
               className="w-full h-1.5 rounded-full appearance-none cursor-pointer"
               style={{
-                background: `linear-gradient(to right, #06B6D4 0%, #06B6D4 ${((settings.speechRate - 0.5) / 1.5) * 100}%, #27272A ${((settings.speechRate - 0.5) / 1.5) * 100}%, #27272A 100%)`,
+                background: `linear-gradient(to right, #FF6500 0%, #FF6500 ${((settings.speechRate - 0.5) / 1.5) * 100}%, #27272A ${((settings.speechRate - 0.5) / 1.5) * 100}%, #27272A 100%)`,
               }}
             />
             <div className="flex justify-between text-[10px] text-[#52525B] mt-1">
@@ -343,7 +343,7 @@ export default function Settings() {
               onClick={() => updateSetting('autoListen', !settings.autoListen)}
               className="relative w-12 h-6 rounded-full transition-colors duration-200"
               style={{
-                background: settings.autoListen ? '#6366F1' : '#3F3F46',
+                background: settings.autoListen ? '#FF6500' : '#3F3F46',
               }}
             >
               <motion.div
@@ -369,7 +369,7 @@ export default function Settings() {
           <div
             className="w-12 h-12 rounded-2xl flex items-center justify-center"
             style={{
-              background: 'linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)',
+              background: 'linear-gradient(135deg, #FF6500 0%, #FF6500 100%)',
             }}
           >
             <span className="text-white font-bold text-lg" style={{ fontFamily: 'var(--font-heading)' }}>
@@ -382,7 +382,7 @@ export default function Settings() {
             </h2>
             <p className="text-xs text-[#71717A]">Enterprise Knowledge Intelligence Platform</p>
           </div>
-          <span className="ml-auto text-xs font-mono text-[#52525B] px-2.5 py-1 rounded-full border border-[rgba(63,63,70,0.5)]">
+          <span className="ml-auto text-xs font-mono text-[#52525B] px-2.5 py-1 rounded-full border border-[rgba(30,62,98,0.5)]">
             v1.0.0
           </span>
         </div>

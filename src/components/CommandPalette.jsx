@@ -77,10 +77,10 @@ export default function CommandPalette({ isOpen, onClose }) {
             exit={{ opacity: 0, scale: 0.97, y: -8 }}
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="relative w-full max-w-lg rounded-2xl overflow-hidden glass-heavy shadow-[0_32px_64px_rgba(0,0,0,0.5)]"
-            style={{ border: '1px solid rgba(63, 63, 70, 0.5)' }}
+            style={{ border: '1px solid rgba(30, 62, 98, 0.5)' }}
           >
             {/* Search Input */}
-            <div className="flex items-center gap-3 px-4 py-3 border-b" style={{ borderColor: 'rgba(63, 63, 70, 0.3)' }}>
+            <div className="flex items-center gap-3 px-4 py-3 border-b" style={{ borderColor: 'rgba(30, 62, 98, 0.3)' }}>
               <Search size={18} className="text-[#71717A]" />
               <input
                 ref={inputRef}
@@ -111,11 +111,11 @@ export default function CommandPalette({ isOpen, onClose }) {
                       }}
                       onMouseEnter={() => setActiveIndex(idx)}
                       className={`flex items-center justify-between px-3 py-2 rounded-xl cursor-pointer transition-colors ${
-                        active ? 'bg-[rgba(99,102,241,0.15)] text-white' : 'text-[#A1A1AA]'
+                        active ? 'bg-[rgba(255,101,0,0.15)] text-white' : 'text-[#A1A1AA]'
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <Icon size={16} className={active ? 'text-[#6366F1]' : 'text-[#71717A]'} />
+                        <Icon size={16} className={active ? 'text-[#FF6500]' : 'text-[#71717A]'} />
                         <span className="text-xs font-medium">{item.label}</span>
                       </div>
                       <span className="text-[10px] font-semibold uppercase tracking-wider text-[#71717A] bg-surface-3 px-2 py-0.5 rounded-md">

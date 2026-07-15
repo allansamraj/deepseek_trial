@@ -25,13 +25,13 @@ const sampleDocuments = [
 
 const typeIcons = {
   PDF: <FileText size={14} className="text-[#F43F5E]" />,
-  DOCX: <File size={14} className="text-[#3B82F6]" />,
-  TXT: <FileCode size={14} className="text-[#10B981]" />,
+  DOCX: <File size={14} className="text-[#1E3E62]" />,
+  TXT: <FileCode size={14} className="text-[#FF6500]" />,
 }
 
 function getHealthColor(score) {
-  if (score >= 85) return '#10B981'
-  if (score >= 70) return '#F59E0B'
+  if (score >= 85) return '#FF6500'
+  if (score >= 70) return '#FF6500'
   return '#F43F5E'
 }
 
@@ -99,12 +99,12 @@ export default function Documents() {
           </div>
 
           {/* View Toggle */}
-          <div className="flex items-center rounded-lg overflow-hidden border border-[rgba(63,63,70,0.5)]">
+          <div className="flex items-center rounded-lg overflow-hidden border border-[rgba(30,62,98,0.5)]">
             <button
               onClick={() => setViewMode('grid')}
               className={`p-2 transition-colors ${
                 viewMode === 'grid'
-                  ? 'bg-[rgba(99,102,241,0.15)] text-[#818CF8]'
+                  ? 'bg-[rgba(255,101,0,0.15)] text-[#FF8233]'
                   : 'text-[#71717A] hover:text-[#FAFAFA] hover:bg-[rgba(39,39,42,0.5)]'
               }`}
             >
@@ -114,7 +114,7 @@ export default function Documents() {
               onClick={() => setViewMode('list')}
               className={`p-2 transition-colors ${
                 viewMode === 'list'
-                  ? 'bg-[rgba(99,102,241,0.15)] text-[#818CF8]'
+                  ? 'bg-[rgba(255,101,0,0.15)] text-[#FF8233]'
                   : 'text-[#71717A] hover:text-[#FAFAFA] hover:bg-[rgba(39,39,42,0.5)]'
               }`}
             >
@@ -161,7 +161,7 @@ export default function Documents() {
               initial={{ opacity: 0, x: -12 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.05, duration: 0.3 }}
-              className="glass flex items-center gap-4 p-4 rounded-xl cursor-pointer group hover:border-[rgba(99,102,241,0.4)] transition-all"
+              className="glass flex items-center gap-4 p-4 rounded-xl cursor-pointer group hover:border-[rgba(255,101,0,0.4)] transition-all"
             >
               {/* Name */}
               <div className="flex-1 min-w-0 flex items-center gap-3">

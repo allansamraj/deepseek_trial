@@ -6,7 +6,7 @@ const departmentData = {
   HR: {
     name: 'Human Resources',
     icon: Users,
-    color: '#8B5CF6',
+    color: '#FF6500',
     docCount: 47,
     health: 92,
     insights: 'Highly structured documentation. Needs updates on hybrid working policies.',
@@ -15,7 +15,7 @@ const departmentData = {
   Finance: {
     name: 'Finance & Accounting',
     icon: DollarSign,
-    color: '#3B82F6',
+    color: '#1E3E62',
     docCount: 32,
     health: 85,
     insights: 'Robust financial reports. Missing some tax compliance docs for international contractors.',
@@ -24,7 +24,7 @@ const departmentData = {
   IT: {
     name: 'Information Technology',
     icon: Cpu,
-    color: '#06B6D4',
+    color: '#FF6500',
     docCount: 54,
     health: 78,
     insights: 'Detailed architecture logs. Security policy docs require annual sign-off.',
@@ -33,7 +33,7 @@ const departmentData = {
   Legal: {
     name: 'Legal & Compliance',
     icon: Shield,
-    color: '#10B981',
+    color: '#FF6500',
     docCount: 19,
     health: 90,
     insights: 'Fully compliant. Contractor agreement templates are standard.',
@@ -42,7 +42,7 @@ const departmentData = {
   Marketing: {
     name: 'Marketing & Brand',
     icon: Sparkles,
-    color: '#F59E0B',
+    color: '#FF6500',
     docCount: 28,
     health: 88,
     insights: 'Good brand assets. Missing localization guidelines for European markets.',
@@ -51,7 +51,7 @@ const departmentData = {
   Operations: {
     name: 'Operations & Facilities',
     icon: BookOpen,
-    color: '#EF4444',
+    color: '#E03E00',
     docCount: 41,
     health: 82,
     insights: 'Standard SOPs listed. Warehouse safety procedures checklist needs revision.',
@@ -117,9 +117,9 @@ export default function KnowledgeMap() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Graph Visualizer */}
-        <div className="lg:col-span-2 rounded-2xl p-6 relative overflow-hidden" style={{ background: 'rgba(17, 17, 24, 0.6)', border: '1px solid rgba(63, 63, 70, 0.5)' }}>
+        <div className="lg:col-span-2 rounded-2xl p-6 relative overflow-hidden" style={{ background: 'rgba(11, 25, 44, 0.6)', border: '1px solid rgba(30, 62, 98, 0.5)' }}>
           <div className="absolute top-4 left-4 flex items-center gap-2">
-            <Network size={16} className="text-[#6366F1]" />
+            <Network size={16} className="text-[#FF6500]" />
             <span className="text-xs font-semibold text-[#A1A1AA]">Interactive Neural Topology</span>
           </div>
 
@@ -136,7 +136,7 @@ export default function KnowledgeMap() {
                   y1={fromCoord.y}
                   x2={toCoord.x}
                   y2={toCoord.y}
-                  stroke={isSelected ? '#6366F1' : 'rgba(63, 63, 70, 0.3)'}
+                  stroke={isSelected ? '#FF6500' : 'rgba(30, 62, 98, 0.3)'}
                   strokeWidth={conn.strength}
                   strokeDasharray={isSelected ? '5,5' : 'none'}
                   initial={{ pathLength: 0 }}
@@ -192,7 +192,7 @@ export default function KnowledgeMap() {
                     cy={coord.y}
                     r="24"
                     fill="rgba(10, 10, 15, 0.9)"
-                    stroke={isSelected ? '#6366F1' : dept.color}
+                    stroke={isSelected ? '#FF6500' : dept.color}
                     strokeWidth={isSelected ? 2.5 : 1.5}
                     style={{
                       transition: 'all 0.3s ease',
@@ -234,8 +234,8 @@ export default function KnowledgeMap() {
                 exit={{ opacity: 0, x: -20 }}
                 className="space-y-6 rounded-2xl p-6 h-full"
                 style={{
-                  background: 'rgba(17, 17, 24, 0.6)',
-                  border: '1px solid rgba(63, 63, 70, 0.5)'
+                  background: 'rgba(11, 25, 44, 0.6)',
+                  border: '1px solid rgba(30, 62, 98, 0.5)'
                 }}
               >
                 {/* Header */}
@@ -257,19 +257,19 @@ export default function KnowledgeMap() {
 
                 {/* Grid Stats */}
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl" style={{ background: 'rgba(24, 24, 27, 0.6)', border: '1px solid rgba(63, 63, 70, 0.3)' }}>
+                  <div className="p-4 rounded-xl" style={{ background: 'rgba(24, 24, 27, 0.6)', border: '1px solid rgba(30, 62, 98, 0.3)' }}>
                     <div className="text-xs text-[#71717A] mb-1">Index Size</div>
                     <div className="text-xl font-bold text-[#F4F4F5]">{departmentData[selectedDept].docCount} Docs</div>
                   </div>
-                  <div className="p-4 rounded-xl" style={{ background: 'rgba(24, 24, 27, 0.6)', border: '1px solid rgba(63, 63, 70, 0.3)' }}>
+                  <div className="p-4 rounded-xl" style={{ background: 'rgba(24, 24, 27, 0.6)', border: '1px solid rgba(30, 62, 98, 0.3)' }}>
                     <div className="text-xs text-[#71717A] mb-1">Health Score</div>
-                    <div className="text-xl font-bold text-[#10B981]">{departmentData[selectedDept].health}%</div>
+                    <div className="text-xl font-bold text-[#FF6500]">{departmentData[selectedDept].health}%</div>
                   </div>
                 </div>
 
                 {/* AI Insight */}
-                <div className="p-4 rounded-xl space-y-2" style={{ background: 'rgba(99, 102, 241, 0.05)', border: '1px solid rgba(99, 102, 241, 0.2)' }}>
-                  <div className="flex items-center gap-2 text-xs font-semibold text-[#818CF8]">
+                <div className="p-4 rounded-xl space-y-2" style={{ background: 'rgba(255, 101, 0, 0.05)', border: '1px solid rgba(255, 101, 0, 0.2)' }}>
+                  <div className="flex items-center gap-2 text-xs font-semibold text-[#FF8233]">
                     <AlertCircle size={14} />
                     <span>AI Shadow Insight</span>
                   </div>
@@ -286,7 +286,7 @@ export default function KnowledgeMap() {
                       <div
                         key={idx}
                         className="flex items-center justify-between p-3 rounded-lg hover:bg-surface-3 transition-colors group"
-                        style={{ background: 'rgba(24, 24, 27, 0.4)', border: '1px solid rgba(63, 63, 70, 0.3)' }}
+                        style={{ background: 'rgba(24, 24, 27, 0.4)', border: '1px solid rgba(30, 62, 98, 0.3)' }}
                       >
                         <span className="text-xs text-[#A1A1AA] font-medium truncate max-w-[80%]">{doc}</span>
                         <ArrowUpRight size={14} className="text-[#71717A] group-hover:text-white transition-colors cursor-pointer" />
@@ -299,8 +299,8 @@ export default function KnowledgeMap() {
               <div
                 className="h-full flex flex-col items-center justify-center text-center py-12 px-6 space-y-4 rounded-2xl"
                 style={{
-                  background: 'rgba(17, 17, 24, 0.6)',
-                  border: '1px solid rgba(63, 63, 70, 0.5)',
+                  background: 'rgba(11, 25, 44, 0.6)',
+                  border: '1px solid rgba(30, 62, 98, 0.5)',
                   minHeight: '400px'
                 }}
               >

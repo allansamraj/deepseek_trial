@@ -37,7 +37,7 @@ export default function ChatMessage({ message }) {
         <div
           className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-1"
           style={{
-            background: 'linear-gradient(135deg, #6366F1, #06B6D4)'
+            background: 'linear-gradient(135deg, #FF6500, #FF6500)'
           }}
         >
           <Brain size={16} className="text-white" />
@@ -50,7 +50,7 @@ export default function ChatMessage({ message }) {
           <div
             className="px-4 py-3 text-white text-sm leading-relaxed"
             style={{
-              background: 'linear-gradient(135deg, #6366F1, #3B82F6)',
+              background: 'linear-gradient(135deg, #FF6500, #1E3E62)',
               borderRadius: '1rem 1rem 0.25rem 1rem',
               maxWidth: '70%'
             }}
@@ -61,8 +61,8 @@ export default function ChatMessage({ message }) {
           <div
             className="px-4 py-3 text-sm leading-relaxed"
             style={{
-              backgroundColor: 'rgba(17, 17, 24, 0.8)',
-              border: '1px solid rgba(63, 63, 70, 0.5)',
+              backgroundColor: 'rgba(11, 25, 44, 0.8)',
+              border: '1px solid rgba(30, 62, 98, 0.5)',
               borderRadius: '1rem 1rem 1rem 0.25rem'
             }}
           >
@@ -77,27 +77,27 @@ export default function ChatMessage({ message }) {
 
             {/* Source References */}
             {message.sources && message.sources.length > 0 && (
-              <div className="flex flex-wrap gap-2 mt-3 pt-3" style={{ borderTop: '1px solid rgba(63, 63, 70, 0.3)' }}>
+              <div className="flex flex-wrap gap-2 mt-3 pt-3" style={{ borderTop: '1px solid rgba(30, 62, 98, 0.3)' }}>
                 {message.sources.map((source, idx) => (
                   <div
                     key={idx}
                     className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs"
                     style={{
-                      background: 'rgba(17, 17, 24, 0.6)',
+                      background: 'rgba(11, 25, 44, 0.6)',
                       backdropFilter: 'blur(12px)',
-                      border: '1px solid rgba(63, 63, 70, 0.4)'
+                      border: '1px solid rgba(30, 62, 98, 0.4)'
                     }}
                   >
-                    <FileText size={12} className="text-[#06B6D4] flex-shrink-0" />
+                    <FileText size={12} className="text-[#FF6500] flex-shrink-0" />
                     <span className="text-[#A1A1AA]">{source.document}</span>
                     <span className="text-[#71717A]">p.{source.page}</span>
                     <span
                       className="px-1.5 py-0.5 rounded-full text-[10px] font-medium"
                       style={{
                         background: source.confidence >= 0.9
-                          ? 'rgba(16, 185, 129, 0.15)'
+                          ? 'rgba(255, 101, 0, 0.15)'
                           : 'rgba(245, 158, 11, 0.15)',
-                        color: source.confidence >= 0.9 ? '#10B981' : '#F59E0B'
+                        color: source.confidence >= 0.9 ? '#FF6500' : '#FF6500'
                       }}
                     >
                       {Math.round(source.confidence * 100)}%
@@ -140,7 +140,7 @@ export default function ChatMessage({ message }) {
 
       {/* User Avatar */}
       {isUser && (
-        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#6366F1] flex items-center justify-center mt-1">
+        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FF6500] flex items-center justify-center mt-1">
           <User size={16} className="text-white" />
         </div>
       )}

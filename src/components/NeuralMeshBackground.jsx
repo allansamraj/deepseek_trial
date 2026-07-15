@@ -23,7 +23,7 @@ export default function NeuralMeshBackground({
         r: 300 + Math.random() * 200,
         vx: (Math.random() - 0.5) * 0.5 * speed,
         vy: (Math.random() - 0.5) * 0.5 * speed,
-        color: 'rgba(99, 102, 241, 0.12)'
+        color: 'rgba(255, 101, 0, 0.12)'
       },
       {
         x: Math.random() * width,
@@ -31,7 +31,7 @@ export default function NeuralMeshBackground({
         r: 250 + Math.random() * 150,
         vx: (Math.random() - 0.5) * 0.4 * speed,
         vy: (Math.random() - 0.5) * 0.4 * speed,
-        color: 'rgba(6, 182, 212, 0.08)'
+        color: 'rgba(30, 62, 98, 0.08)'
       },
       {
         x: Math.random() * width,
@@ -39,7 +39,7 @@ export default function NeuralMeshBackground({
         r: 350 + Math.random() * 150,
         vx: (Math.random() - 0.5) * 0.3 * speed,
         vy: (Math.random() - 0.5) * 0.3 * speed,
-        color: 'rgba(139, 92, 246, 0.08)'
+        color: 'rgba(255, 101, 0, 0.08)'
       }
     ]
 
@@ -52,7 +52,7 @@ export default function NeuralMeshBackground({
     window.addEventListener('resize', handleResize)
 
     const drawGrid = () => {
-      ctx.strokeStyle = 'rgba(99, 102, 241, 0.03)'
+      ctx.strokeStyle = 'rgba(255, 101, 0, 0.03)'
       ctx.lineWidth = 1
       const gridSize = 40
 

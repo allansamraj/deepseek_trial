@@ -43,24 +43,24 @@ export default function VoiceAssistant() {
       sublabel: 'Ask anything from your knowledge base',
       icon: Mic,
       glowColor: 'transparent',
-      borderGradient: 'linear-gradient(135deg, #6366F1, #06B6D4)',
+      borderGradient: 'linear-gradient(135deg, #FF6500, #FF6500)',
       iconColor: '#A1A1AA',
     },
     listening: {
       label: 'Listening...',
       sublabel: 'Speak clearly into your microphone',
       icon: Mic,
-      glowColor: 'rgba(6, 182, 212, 0.4)',
-      borderGradient: 'linear-gradient(135deg, #06B6D4, #22D3EE)',
-      iconColor: '#06B6D4',
+      glowColor: 'rgba(30, 62, 98, 0.4)',
+      borderGradient: 'linear-gradient(135deg, #FF6500, #22D3EE)',
+      iconColor: '#FF6500',
     },
     speaking: {
       label: 'Speaking...',
       sublabel: 'Playing AI response',
       icon: Volume2,
-      glowColor: 'rgba(16, 185, 129, 0.4)',
-      borderGradient: 'linear-gradient(135deg, #10B981, #34D399)',
-      iconColor: '#10B981',
+      glowColor: 'rgba(255, 101, 0, 0.4)',
+      borderGradient: 'linear-gradient(135deg, #FF6500, #FF8233)',
+      iconColor: '#FF6500',
     },
   }
 
@@ -77,10 +77,10 @@ export default function VoiceAssistant() {
           style={{
             background: `radial-gradient(ellipse 500px 400px at 50% 40%, ${
               state === 'listening'
-                ? 'rgba(6, 182, 212, 0.06)'
+                ? 'rgba(30, 62, 98, 0.06)'
                 : state === 'speaking'
-                ? 'rgba(16, 185, 129, 0.06)'
-                : 'rgba(99, 102, 241, 0.04)'
+                ? 'rgba(255, 101, 0, 0.06)'
+                : 'rgba(255, 101, 0, 0.04)'
             }, transparent 70%)`,
           }}
         />
@@ -104,10 +104,10 @@ export default function VoiceAssistant() {
               width: 220,
               height: 220,
               background: state === 'listening'
-                ? 'radial-gradient(circle, rgba(6,182,212,0.3) 0%, transparent 70%)'
+                ? 'radial-gradient(circle, rgba(30,62,98,0.3) 0%, transparent 70%)'
                 : state === 'speaking'
-                ? 'radial-gradient(circle, rgba(16,185,129,0.3) 0%, transparent 70%)'
-                : 'radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)',
+                ? 'radial-gradient(circle, rgba(255,101,0,0.3) 0%, transparent 70%)'
+                : 'radial-gradient(circle, rgba(255,101,0,0.15) 0%, transparent 70%)',
               filter: 'blur(30px) url(#jarvisLiquid)',
             }}
             animate={state !== 'idle' ? {
@@ -132,10 +132,10 @@ export default function VoiceAssistant() {
                 width: 170 + i * 20,
                 height: 170 + i * 20,
                 borderColor: state === 'listening'
-                  ? 'rgba(6, 182, 212, 0.25)'
+                  ? 'rgba(30, 62, 98, 0.25)'
                   : state === 'speaking'
-                  ? 'rgba(16, 185, 129, 0.25)'
-                  : 'rgba(99, 102, 241, 0.15)',
+                  ? 'rgba(255, 101, 0, 0.25)'
+                  : 'rgba(255, 101, 0, 0.15)',
                 boxShadow: state !== 'idle'
                   ? `inset 0 0 15px ${cfg.glowColor}`
                   : 'none',
@@ -159,7 +159,7 @@ export default function VoiceAssistant() {
             data-cursor-text={state === 'listening' ? 'Mute' : 'Speak'}
             animate={{
               scale: state === 'listening' ? 1.06 : 1,
-              boxShadow: state !== 'idle' ? `0 0 50px ${cfg.glowColor}` : '0 0 20px rgba(99, 102, 241, 0.1)',
+              boxShadow: state !== 'idle' ? `0 0 50px ${cfg.glowColor}` : '0 0 20px rgba(255, 101, 0, 0.1)',
             }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="relative z-10 rounded-full flex items-center justify-center cursor-pointer border-0"
@@ -167,7 +167,7 @@ export default function VoiceAssistant() {
               width: 150,
               height: 150,
               background: 'rgba(10, 10, 15, 0.85)',
-              border: `1.5px solid ${state === 'listening' ? '#06B6D4' : state === 'speaking' ? '#10B981' : 'rgba(99, 102, 241, 0.3)'}`,
+              border: `1.5px solid ${state === 'listening' ? '#FF6500' : state === 'speaking' ? '#FF6500' : 'rgba(255, 101, 0, 0.3)'}`,
               backdropFilter: 'blur(20px)',
               filter: 'url(#jarvisLiquid)',
             }}
@@ -182,7 +182,7 @@ export default function VoiceAssistant() {
             >
               <StateIcon size={36} style={{ color: cfg.iconColor }} />
               {state === 'listening' && (
-                <span className="text-[9px] font-bold tracking-widest text-[#06B6D4] uppercase animate-pulse">
+                <span className="text-[9px] font-bold tracking-widest text-[#FF6500] uppercase animate-pulse">
                   Listening
                 </span>
               )}
@@ -229,7 +229,7 @@ export default function VoiceAssistant() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex-shrink-0 border-t border-[rgba(63,63,70,0.3)]"
+          className="flex-shrink-0 border-t border-[rgba(30,62,98,0.3)]"
           style={{ maxHeight: '40vh' }}
         >
           {/* Header */}

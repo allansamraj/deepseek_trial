@@ -31,37 +31,37 @@ const features = [
     icon: Brain,
     title: 'AI Knowledge Assistant',
     description: 'Natural language queries across your entire knowledge base with context-aware understanding',
-    gradient: 'linear-gradient(135deg, #6366F1, #8B5CF6)',
+    gradient: 'linear-gradient(135deg, #FF6500, #FF6500)',
   },
   {
     icon: Search,
     title: 'Semantic Search',
     description: 'Find exactly what you need with vector-powered contextual search that understands intent',
-    gradient: 'linear-gradient(135deg, #3B82F6, #06B6D4)',
+    gradient: 'linear-gradient(135deg, #1E3E62, #FF6500)',
   },
   {
     icon: FileText,
     title: 'Document Intelligence',
     description: 'Automatic analysis, health scoring, gap detection, and smart summarization',
-    gradient: 'linear-gradient(135deg, #06B6D4, #10B981)',
+    gradient: 'linear-gradient(135deg, #FF6500, #FF6500)',
   },
   {
     icon: Mic,
     title: 'Voice Interface',
     description: 'Hands-free interaction with your knowledge base — talk to your AI assistant',
-    gradient: 'linear-gradient(135deg, #8B5CF6, #EC4899)',
+    gradient: 'linear-gradient(135deg, #FF6500, #EC4899)',
   },
   {
     icon: Network,
     title: 'Knowledge Mapping',
     description: 'Visual graph of organizational knowledge connections across departments',
-    gradient: 'linear-gradient(135deg, #F59E0B, #EF4444)',
+    gradient: 'linear-gradient(135deg, #FF6500, #E03E00)',
   },
   {
     icon: Shield,
     title: 'Enterprise Security',
     description: 'Role-based access control with comprehensive audit trails and compliance',
-    gradient: 'linear-gradient(135deg, #10B981, #3B82F6)',
+    gradient: 'linear-gradient(135deg, #FF6500, #1E3E62)',
   },
 ]
 
@@ -186,7 +186,7 @@ function GlassFeatureCard({ icon: Icon, title, description, gradient, index }) {
     >
       <TiltCard
         className="p-6 cursor-default h-full"
-        glowColor="rgba(99, 102, 241, 0.15)"
+        glowColor="rgba(255, 101, 0, 0.15)"
         data-magnetic
       >
         <div
@@ -240,20 +240,20 @@ function ChatDemo() {
       ref={ref}
       className="rounded-2xl overflow-hidden max-w-2xl mx-auto"
       style={{
-        background: 'rgba(17, 17, 24, 0.8)',
-        border: '1px solid rgba(63, 63, 70, 0.5)',
+        background: 'rgba(11, 25, 44, 0.8)',
+        border: '1px solid rgba(30, 62, 98, 0.5)',
         backdropFilter: 'blur(20px)',
       }}
     >
       {/* Chat header */}
-      <div className="flex items-center gap-3 px-5 py-3" style={{ borderBottom: '1px solid rgba(63, 63, 70, 0.5)' }}>
-        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #6366F1, #3B82F6)' }}>
+      <div className="flex items-center gap-3 px-5 py-3" style={{ borderBottom: '1px solid rgba(30, 62, 98, 0.5)' }}>
+        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #FF6500, #1E3E62)' }}>
           <Bot size={16} className="text-white" />
         </div>
         <div>
           <div className="text-sm font-semibold text-[#F4F4F5]">DeepSeek AI</div>
-          <div className="text-xs text-[#10B981] flex items-center gap-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] inline-block" /> Online
+          <div className="text-xs text-[#FF6500] flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF6500] inline-block" /> Online
           </div>
         </div>
       </div>
@@ -271,13 +271,13 @@ function ChatDemo() {
             <div
               className="rounded-2xl px-4 py-3 text-sm max-w-[85%]"
               style={msg.role === 'user' ? {
-                background: 'linear-gradient(135deg, #6366F1, #3B82F6)',
+                background: 'linear-gradient(135deg, #FF6500, #1E3E62)',
                 color: 'white',
                 borderBottomRightRadius: '6px',
               } : {
                 background: 'rgba(24, 24, 27, 0.8)',
                 color: '#F4F4F5',
-                border: '1px solid rgba(63, 63, 70, 0.5)',
+                border: '1px solid rgba(30, 62, 98, 0.5)',
                 borderBottomLeftRadius: '6px',
               }}
             >
@@ -286,7 +286,7 @@ function ChatDemo() {
                   __html: line
                     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                     .replace(/\*(.*?)\*/g, '<em style="color:#A1A1AA">$1</em>')
-                    .replace(/•/g, '<span style="color:#6366F1">•</span>')
+                    .replace(/•/g, '<span style="color:#FF6500">•</span>')
                 }} />
               ))}
             </div>
@@ -294,9 +294,9 @@ function ChatDemo() {
         ))}
 
         {typing && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex gap-1.5 px-4 py-3 rounded-2xl w-fit" style={{ background: 'rgba(24,24,27,0.8)', border: '1px solid rgba(63,63,70,0.5)' }}>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex gap-1.5 px-4 py-3 rounded-2xl w-fit" style={{ background: 'rgba(24,24,27,0.8)', border: '1px solid rgba(30,62,98,0.5)' }}>
             {[0, 1, 2].map(i => (
-              <span key={i} className="w-2 h-2 rounded-full bg-[#6366F1]" style={{ animation: `typing 1.4s infinite ${i * 0.2}s` }} />
+              <span key={i} className="w-2 h-2 rounded-full bg-[#FF6500]" style={{ animation: `typing 1.4s infinite ${i * 0.2}s` }} />
             ))}
           </motion.div>
         )}
@@ -329,13 +329,13 @@ function ArchitectureFlow() {
               <div
                 className="w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center"
                 style={{
-                  background: inView ? 'linear-gradient(135deg, rgba(99,102,241,0.2), rgba(6,182,212,0.2))' : 'rgba(24,24,27,0.6)',
-                  border: '1px solid rgba(99, 102, 241, 0.3)',
+                  background: inView ? 'linear-gradient(135deg, rgba(255,101,0,0.2), rgba(30,62,98,0.2))' : 'rgba(24,24,27,0.6)',
+                  border: '1px solid rgba(255, 101, 0, 0.3)',
                   transition: 'all 0.5s ease',
                   transitionDelay: `${i * 0.15 + 0.3}s`,
                 }}
               >
-                <Icon size={24} className="text-[#6366F1]" />
+                <Icon size={24} className="text-[#FF6500]" />
               </div>
               <div className="text-center">
                 <div className="text-xs font-semibold text-[#F4F4F5]">{step.label}</div>
@@ -348,7 +348,7 @@ function ArchitectureFlow() {
                 animate={inView ? { opacity: 1, scaleX: 1 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.15 + 0.2 }}
               >
-                <ChevronRight size={20} className="text-[#6366F1] opacity-50 hidden md:block" />
+                <ChevronRight size={20} className="text-[#FF6500] opacity-50 hidden md:block" />
               </motion.div>
             )}
           </motion.div>
@@ -375,7 +375,7 @@ export default function LandingPage() {
   }, [])
 
   return (
-    <div className="min-h-screen relative" style={{ background: '#09090B' }}>
+    <div className="min-h-screen relative" style={{ background: '#000000' }}>
       <ParticleBackground />
 
       {/* Cursor Glow */}
@@ -387,19 +387,19 @@ export default function LandingPage() {
       {/* ─── Floating Gradient Blobs ─── */}
       <motion.div
         className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full"
-        style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%)', filter: 'blur(80px)' }}
+        style={{ background: 'radial-gradient(circle, rgba(255,101,0,0.2) 0%, transparent 70%)', filter: 'blur(80px)' }}
         animate={{ x: [0, 80, -40, 0], y: [0, -60, 50, 0] }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
       />
       <motion.div
         className="absolute top-[40%] right-[-8%] w-[400px] h-[400px] rounded-full"
-        style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%)', filter: 'blur(80px)' }}
+        style={{ background: 'radial-gradient(circle, rgba(30,62,98,0.15) 0%, transparent 70%)', filter: 'blur(80px)' }}
         animate={{ x: [0, -70, 40, 0], y: [0, 60, -40, 0] }}
         transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
       />
       <motion.div
         className="absolute bottom-[-10%] left-[30%] w-[450px] h-[450px] rounded-full"
-        style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%)', filter: 'blur(80px)' }}
+        style={{ background: 'radial-gradient(circle, rgba(255,101,0,0.12) 0%, transparent 70%)', filter: 'blur(80px)' }}
         animate={{ x: [0, 50, -60, 0], y: [0, -50, 30, 0] }}
         transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
       />
@@ -416,9 +416,9 @@ export default function LandingPage() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-6 flex items-center gap-2 px-4 py-1.5 rounded-full text-sm"
           style={{
-            background: 'rgba(99, 102, 241, 0.1)',
-            border: '1px solid rgba(99, 102, 241, 0.25)',
-            color: '#818CF8',
+            background: 'rgba(255, 101, 0, 0.1)',
+            border: '1px solid rgba(255, 101, 0, 0.25)',
+            color: '#FF8233',
           }}
         >
           <Sparkles size={14} />
@@ -433,7 +433,7 @@ export default function LandingPage() {
           className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-6 tracking-tight"
           style={{
             fontFamily: 'var(--font-heading)',
-            background: 'linear-gradient(135deg, #F4F4F5 0%, #6366F1 50%, #06B6D4 100%)',
+            background: 'linear-gradient(135deg, #F4F4F5 0%, #FF6500 50%, #FF6500 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
@@ -466,11 +466,11 @@ export default function LandingPage() {
         >
           <Link to="/dashboard">
             <motion.button
-              whileHover={{ scale: 1.04, boxShadow: '0 0 30px rgba(99,102,241,0.3)' }}
+              whileHover={{ scale: 1.04, boxShadow: '0 0 30px rgba(255,101,0,0.3)' }}
               whileTap={{ scale: 0.97 }}
               className="px-8 py-3.5 rounded-xl text-white font-semibold text-sm flex items-center gap-2 cursor-pointer"
               style={{
-                background: 'linear-gradient(135deg, #6366F1, #3B82F6)',
+                background: 'linear-gradient(135deg, #FF6500, #1E3E62)',
                 fontFamily: 'var(--font-heading)',
               }}
             >
@@ -479,12 +479,12 @@ export default function LandingPage() {
           </Link>
           <Link to="/documents">
             <motion.button
-              whileHover={{ scale: 1.04, borderColor: 'rgba(99,102,241,0.6)' }}
+              whileHover={{ scale: 1.04, borderColor: 'rgba(255,101,0,0.6)' }}
               whileTap={{ scale: 0.97 }}
               className="px-8 py-3.5 rounded-xl font-semibold text-sm text-[#A1A1AA] cursor-pointer"
               style={{
-                background: 'rgba(17, 17, 24, 0.6)',
-                border: '1px solid rgba(63, 63, 70, 0.5)',
+                background: 'rgba(11, 25, 44, 0.6)',
+                border: '1px solid rgba(30, 62, 98, 0.5)',
                 backdropFilter: 'blur(10px)',
                 fontFamily: 'var(--font-heading)',
               }}
@@ -505,12 +505,12 @@ export default function LandingPage() {
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="w-6 h-10 rounded-full flex items-start justify-center pt-2"
-            style={{ border: '2px solid rgba(99, 102, 241, 0.3)' }}
+            style={{ border: '2px solid rgba(255, 101, 0, 0.3)' }}
           >
             <motion.div
               animate={{ opacity: [0.3, 1, 0.3] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-1.5 h-1.5 rounded-full bg-[#6366F1]"
+              className="w-1.5 h-1.5 rounded-full bg-[#FF6500]"
             />
           </motion.div>
         </motion.div>
@@ -537,7 +537,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <SectionReveal>
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-[0.15em] text-[#6366F1] mb-4 font-semibold">The Problem</p>
+              <p className="text-sm uppercase tracking-[0.15em] text-[#FF6500] mb-4 font-semibold">The Problem</p>
               <h2 className="text-3xl md:text-5xl font-bold text-[#F4F4F5] mb-4" style={{ fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>
                 Enterprise Knowledge is Broken
               </h2>
@@ -555,8 +555,8 @@ export default function LandingPage() {
                   <div
                     className="rounded-2xl p-8 text-center"
                     style={{
-                      background: 'rgba(17, 17, 24, 0.6)',
-                      border: '1px solid rgba(63, 63, 70, 0.5)',
+                      background: 'rgba(11, 25, 44, 0.6)',
+                      border: '1px solid rgba(30, 62, 98, 0.5)',
                       backdropFilter: 'blur(16px)',
                     }}
                   >
@@ -580,7 +580,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <SectionReveal>
             <div>
-              <p className="text-sm uppercase tracking-[0.15em] text-[#06B6D4] mb-4 font-semibold">The Solution</p>
+              <p className="text-sm uppercase tracking-[0.15em] text-[#FF6500] mb-4 font-semibold">The Solution</p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#F4F4F5] mb-6" style={{ fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>
                 AI That Understands Your Enterprise
               </h2>
@@ -602,8 +602,8 @@ export default function LandingPage() {
                     transition={{ delay: i * 0.1 }}
                     className="flex items-center gap-3"
                   >
-                    <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(16, 185, 129, 0.15)' }}>
-                      <Check size={14} className="text-[#10B981]" />
+                    <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(255, 101, 0, 0.15)' }}>
+                      <Check size={14} className="text-[#FF6500]" />
                     </div>
                     <span className="text-sm text-[#A1A1AA]">{item}</span>
                   </motion.div>
@@ -619,33 +619,33 @@ export default function LandingPage() {
                 animate={{ rotate: 360 }}
                 transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
                 className="absolute w-72 h-72 rounded-full"
-                style={{ border: '1px dashed rgba(99, 102, 241, 0.2)' }}
+                style={{ border: '1px dashed rgba(255, 101, 0, 0.2)' }}
               />
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 45, repeat: Infinity, ease: 'linear' }}
                 className="absolute w-56 h-56 rounded-full"
-                style={{ border: '1px dashed rgba(6, 182, 212, 0.2)' }}
+                style={{ border: '1px dashed rgba(30, 62, 98, 0.2)' }}
               />
               <motion.div
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 4, repeat: Infinity }}
                 className="w-32 h-32 rounded-3xl flex items-center justify-center"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(99,102,241,0.2), rgba(6,182,212,0.2))',
-                  border: '1px solid rgba(99, 102, 241, 0.3)',
-                  boxShadow: '0 0 60px rgba(99, 102, 241, 0.15)',
+                  background: 'linear-gradient(135deg, rgba(255,101,0,0.2), rgba(30,62,98,0.2))',
+                  border: '1px solid rgba(255, 101, 0, 0.3)',
+                  boxShadow: '0 0 60px rgba(255, 101, 0, 0.15)',
                 }}
               >
-                <Brain size={48} className="text-[#6366F1]" />
+                <Brain size={48} className="text-[#FF6500]" />
               </motion.div>
 
               {/* Floating nodes */}
               {[
-                { x: -120, y: -80, icon: FileText, color: '#3B82F6', delay: 0 },
-                { x: 120, y: -60, icon: Search, color: '#06B6D4', delay: 0.5 },
-                { x: -100, y: 80, icon: Database, color: '#8B5CF6', delay: 1 },
-                { x: 110, y: 90, icon: Zap, color: '#10B981', delay: 1.5 },
+                { x: -120, y: -80, icon: FileText, color: '#1E3E62', delay: 0 },
+                { x: 120, y: -60, icon: Search, color: '#FF6500', delay: 0.5 },
+                { x: -100, y: 80, icon: Database, color: '#FF6500', delay: 1 },
+                { x: 110, y: 90, icon: Zap, color: '#FF6500', delay: 1.5 },
               ].map((node, i) => {
                 const NodeIcon = node.icon
                 return (
@@ -655,7 +655,7 @@ export default function LandingPage() {
                     style={{
                       left: `calc(50% + ${node.x}px)`,
                       top: `calc(50% + ${node.y}px)`,
-                      background: `rgba(${node.color === '#3B82F6' ? '59,130,246' : node.color === '#06B6D4' ? '6,182,212' : node.color === '#8B5CF6' ? '139,92,246' : '16,185,129'}, 0.15)`,
+                      background: `rgba(${node.color === '#1E3E62' ? '59,130,246' : node.color === '#FF6500' ? '6,182,212' : node.color === '#FF6500' ? '139,92,246' : '16,185,129'}, 0.15)`,
                       border: `1px solid ${node.color}30`,
                     }}
                     animate={{ y: [0, -8, 0] }}
@@ -679,8 +679,8 @@ export default function LandingPage() {
                 <div
                   className="rounded-2xl p-6 text-center"
                   style={{
-                    background: 'rgba(17, 17, 24, 0.6)',
-                    border: '1px solid rgba(63, 63, 70, 0.5)',
+                    background: 'rgba(11, 25, 44, 0.6)',
+                    border: '1px solid rgba(30, 62, 98, 0.5)',
                     backdropFilter: 'blur(16px)',
                   }}
                 >
@@ -700,7 +700,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <SectionReveal>
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-[0.15em] text-[#6366F1] mb-4 font-semibold">Capabilities</p>
+              <p className="text-sm uppercase tracking-[0.15em] text-[#FF6500] mb-4 font-semibold">Capabilities</p>
               <h2 className="text-3xl md:text-5xl font-bold text-[#F4F4F5] mb-4" style={{ fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>
                 Enterprise Intelligence, Reimagined
               </h2>
@@ -723,7 +723,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <SectionReveal>
             <div className="text-center mb-12">
-              <p className="text-sm uppercase tracking-[0.15em] text-[#06B6D4] mb-4 font-semibold">Live Preview</p>
+              <p className="text-sm uppercase tracking-[0.15em] text-[#FF6500] mb-4 font-semibold">Live Preview</p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#F4F4F5] mb-4" style={{ fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>
                 AI That Knows Your Business
               </h2>
@@ -749,7 +749,7 @@ export default function LandingPage() {
                   <motion.div
                     key={i}
                     className="absolute inset-0 rounded-full"
-                    style={{ border: '1px solid rgba(139, 92, 246, 0.3)' }}
+                    style={{ border: '1px solid rgba(255, 101, 0, 0.3)' }}
                     animate={{ scale: [1, 1.5 + i * 0.3], opacity: [0.5, 0] }}
                     transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
                   />
@@ -759,12 +759,12 @@ export default function LandingPage() {
                   transition={{ duration: 2, repeat: Infinity }}
                   className="w-28 h-28 rounded-full flex items-center justify-center"
                   style={{
-                    background: 'linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2))',
-                    border: '1px solid rgba(139, 92, 246, 0.3)',
-                    boxShadow: '0 0 60px rgba(139, 92, 246, 0.15)',
+                    background: 'linear-gradient(135deg, rgba(255,101,0,0.2), rgba(255,101,0,0.2))',
+                    border: '1px solid rgba(255, 101, 0, 0.3)',
+                    boxShadow: '0 0 60px rgba(255, 101, 0, 0.15)',
                   }}
                 >
-                  <Mic size={36} className="text-[#8B5CF6]" />
+                  <Mic size={36} className="text-[#FF6500]" />
                 </motion.div>
               </div>
             </div>
@@ -772,7 +772,7 @@ export default function LandingPage() {
 
           <SectionReveal delay={0.2}>
             <div>
-              <p className="text-sm uppercase tracking-[0.15em] text-[#8B5CF6] mb-4 font-semibold">Voice Interface</p>
+              <p className="text-sm uppercase tracking-[0.15em] text-[#FF6500] mb-4 font-semibold">Voice Interface</p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#F4F4F5] mb-6" style={{ fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>
                 Talk to Your Knowledge Base
               </h2>
@@ -805,7 +805,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <SectionReveal>
             <div className="text-center mb-12">
-              <p className="text-sm uppercase tracking-[0.15em] text-[#10B981] mb-4 font-semibold">Knowledge Graph</p>
+              <p className="text-sm uppercase tracking-[0.15em] text-[#FF6500] mb-4 font-semibold">Knowledge Graph</p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#F4F4F5] mb-4" style={{ fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>
                 Visualize Your Knowledge Network
               </h2>
@@ -815,7 +815,7 @@ export default function LandingPage() {
           <SectionReveal delay={0.2}>
             <div
               className="rounded-2xl p-8 md:p-12 relative overflow-hidden"
-              style={{ background: 'rgba(17, 17, 24, 0.6)', border: '1px solid rgba(63, 63, 70, 0.5)' }}
+              style={{ background: 'rgba(11, 25, 44, 0.6)', border: '1px solid rgba(30, 62, 98, 0.5)' }}
             >
               {/* Animated SVG knowledge graph */}
               <svg viewBox="0 0 800 400" className="w-full h-auto">
@@ -835,7 +835,7 @@ export default function LandingPage() {
                   <motion.line
                     key={i}
                     x1={line.x1} y1={line.y1} x2={line.x2} y2={line.y2}
-                    stroke="rgba(99, 102, 241, 0.2)"
+                    stroke="rgba(255, 101, 0, 0.2)"
                     strokeWidth="1"
                     initial={{ pathLength: 0, opacity: 0 }}
                     whileInView={{ pathLength: 1, opacity: 1 }}
@@ -850,12 +850,12 @@ export default function LandingPage() {
 
                 {/* Department nodes */}
                 {[
-                  { cx: 200, cy: 100, label: 'HR', color: '#8B5CF6' },
-                  { cx: 600, cy: 100, label: 'Finance', color: '#3B82F6' },
-                  { cx: 150, cy: 300, label: 'IT', color: '#06B6D4' },
-                  { cx: 650, cy: 300, label: 'Legal', color: '#10B981' },
-                  { cx: 400, cy: 60, label: 'Marketing', color: '#F59E0B' },
-                  { cx: 400, cy: 340, label: 'Operations', color: '#EF4444' },
+                  { cx: 200, cy: 100, label: 'HR', color: '#FF6500' },
+                  { cx: 600, cy: 100, label: 'Finance', color: '#1E3E62' },
+                  { cx: 150, cy: 300, label: 'IT', color: '#FF6500' },
+                  { cx: 650, cy: 300, label: 'Legal', color: '#FF6500' },
+                  { cx: 400, cy: 60, label: 'Marketing', color: '#FF6500' },
+                  { cx: 400, cy: 340, label: 'Operations', color: '#E03E00' },
                 ].map((node, i) => (
                   <g key={i}>
                     <motion.circle
@@ -870,8 +870,8 @@ export default function LandingPage() {
 
                 <defs>
                   <radialGradient id="centerGrad">
-                    <stop offset="0%" stopColor="rgba(99,102,241,0.3)" />
-                    <stop offset="100%" stopColor="rgba(99,102,241,0.1)" />
+                    <stop offset="0%" stopColor="rgba(255,101,0,0.3)" />
+                    <stop offset="100%" stopColor="rgba(255,101,0,0.1)" />
                   </radialGradient>
                 </defs>
               </svg>
@@ -885,14 +885,14 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <SectionReveal>
             <div>
-              <p className="text-sm uppercase tracking-[0.15em] text-[#F59E0B] mb-4 font-semibold">Analytics</p>
+              <p className="text-sm uppercase tracking-[0.15em] text-[#FF6500] mb-4 font-semibold">Analytics</p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#F4F4F5] mb-6" style={{ fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>
                 Measure Knowledge Intelligence
               </h2>
               <p className="text-[#A1A1AA] mb-6 leading-relaxed">
                 Real-time dashboards with AI-driven insights. Track knowledge growth, identify gaps, and measure the impact of your knowledge management strategy.
               </p>
-              <Link to="/dashboard" className="inline-flex items-center gap-2 text-sm text-[#6366F1] font-semibold hover:text-[#818CF8] transition-colors">
+              <Link to="/dashboard" className="inline-flex items-center gap-2 text-sm text-[#FF6500] font-semibold hover:text-[#FF8233] transition-colors">
                 Explore Dashboard <ArrowUpRight size={16} />
               </Link>
             </div>
@@ -901,10 +901,10 @@ export default function LandingPage() {
           <SectionReveal delay={0.2}>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { label: 'Documents', value: '12,847', change: '+12.5%', color: '#3B82F6' },
-                { label: 'AI Queries', value: '45,231', change: '+28.3%', color: '#6366F1' },
-                { label: 'Accuracy', value: '98.6%', change: '+2.1%', color: '#10B981' },
-                { label: 'Users', value: '342', change: '+15.7%', color: '#06B6D4' },
+                { label: 'Documents', value: '12,847', change: '+12.5%', color: '#1E3E62' },
+                { label: 'AI Queries', value: '45,231', change: '+28.3%', color: '#FF6500' },
+                { label: 'Accuracy', value: '98.6%', change: '+2.1%', color: '#FF6500' },
+                { label: 'Users', value: '342', change: '+15.7%', color: '#FF6500' },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -913,11 +913,11 @@ export default function LandingPage() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   className="rounded-xl p-5"
-                  style={{ background: 'rgba(17, 17, 24, 0.6)', border: '1px solid rgba(63, 63, 70, 0.5)' }}
+                  style={{ background: 'rgba(11, 25, 44, 0.6)', border: '1px solid rgba(30, 62, 98, 0.5)' }}
                 >
                   <div className="text-xs text-[#71717A] mb-2">{item.label}</div>
                   <div className="text-2xl font-bold text-[#F4F4F5]" style={{ fontFamily: 'var(--font-heading)' }}>{item.value}</div>
-                  <div className="text-xs text-[#10B981] mt-1">{item.change}</div>
+                  <div className="text-xs text-[#FF6500] mt-1">{item.change}</div>
                 </motion.div>
               ))}
             </div>
@@ -930,7 +930,7 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto">
           <SectionReveal>
             <div className="text-center mb-12">
-              <p className="text-sm uppercase tracking-[0.15em] text-[#06B6D4] mb-4 font-semibold">Architecture</p>
+              <p className="text-sm uppercase tracking-[0.15em] text-[#FF6500] mb-4 font-semibold">Architecture</p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#F4F4F5] mb-4" style={{ fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>
                 How DeepSeek Works
               </h2>
@@ -950,7 +950,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <SectionReveal>
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-[0.15em] text-[#6366F1] mb-4 font-semibold">Testimonials</p>
+              <p className="text-sm uppercase tracking-[0.15em] text-[#FF6500] mb-4 font-semibold">Testimonials</p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#F4F4F5]" style={{ fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>
                 Loved by Enterprise Teams
               </h2>
@@ -962,14 +962,14 @@ export default function LandingPage() {
               <SectionReveal key={i} delay={i * 0.15}>
                 <div
                   className="rounded-2xl p-6 flex flex-col h-full"
-                  style={{ background: 'rgba(17, 17, 24, 0.6)', border: '1px solid rgba(63, 63, 70, 0.5)' }}
+                  style={{ background: 'rgba(11, 25, 44, 0.6)', border: '1px solid rgba(30, 62, 98, 0.5)' }}
                 >
                   <div className="flex gap-1 mb-4">
-                    {[1, 2, 3, 4, 5].map(s => <Star key={s} size={14} className="text-[#F59E0B]" fill="#F59E0B" />)}
+                    {[1, 2, 3, 4, 5].map(s => <Star key={s} size={14} className="text-[#FF6500]" fill="#FF6500" />)}
                   </div>
                   <p className="text-sm text-[#A1A1AA] leading-relaxed mb-6 flex-1">"{t.quote}"</p>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ background: 'linear-gradient(135deg, #6366F1, #3B82F6)' }}>
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ background: 'linear-gradient(135deg, #FF6500, #1E3E62)' }}>
                       {t.avatar}
                     </div>
                     <div>
@@ -989,7 +989,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <SectionReveal>
             <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-[0.15em] text-[#6366F1] mb-4 font-semibold">Pricing</p>
+              <p className="text-sm uppercase tracking-[0.15em] text-[#FF6500] mb-4 font-semibold">Pricing</p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#F4F4F5] mb-4" style={{ fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>
                 Plans That Scale With You
               </h2>
@@ -1004,15 +1004,15 @@ export default function LandingPage() {
               <SectionReveal key={i} delay={i * 0.15}>
                 <TiltCard
                   className="p-6 relative flex flex-col h-full cursor-default"
-                  glowColor={plan.popular ? 'rgba(99, 102, 241, 0.25)' : 'rgba(99, 102, 241, 0.12)'}
+                  glowColor={plan.popular ? 'rgba(255, 101, 0, 0.25)' : 'rgba(255, 101, 0, 0.12)'}
                   style={{
-                    background: plan.popular ? 'rgba(99, 102, 241, 0.08)' : 'rgba(17, 17, 24, 0.6)',
-                    borderColor: plan.popular ? 'rgba(99, 102, 241, 0.4)' : 'rgba(63, 63, 70, 0.5)',
+                    background: plan.popular ? 'rgba(255, 101, 0, 0.08)' : 'rgba(11, 25, 44, 0.6)',
+                    borderColor: plan.popular ? 'rgba(255, 101, 0, 0.4)' : 'rgba(30, 62, 98, 0.5)',
                   }}
                   data-magnetic
                 >
                   {plan.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-semibold text-white z-10" style={{ background: 'linear-gradient(135deg, #6366F1, #3B82F6)' }}>
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-semibold text-white z-10" style={{ background: 'linear-gradient(135deg, #FF6500, #1E3E62)' }}>
                       Most Popular
                     </div>
                   )}
@@ -1027,7 +1027,7 @@ export default function LandingPage() {
                   <ul className="space-y-3 mb-8 flex-1">
                     {plan.features.map((f, fi) => (
                       <li key={fi} className="flex items-center gap-2 text-sm text-[#A1A1AA]">
-                        <Check size={14} className="text-[#6366F1] flex-shrink-0" />
+                        <Check size={14} className="text-[#FF6500] flex-shrink-0" />
                         {f}
                       </li>
                     ))}
@@ -1038,9 +1038,9 @@ export default function LandingPage() {
                       whileTap={{ scale: 0.98 }}
                       className="w-full py-3 rounded-xl font-semibold text-sm cursor-pointer"
                       style={{
-                        background: plan.popular ? 'linear-gradient(135deg, #6366F1, #3B82F6)' : 'rgba(24, 24, 27, 0.8)',
+                        background: plan.popular ? 'linear-gradient(135deg, #FF6500, #1E3E62)' : 'rgba(24, 24, 27, 0.8)',
                         color: plan.popular ? 'white' : '#A1A1AA',
-                        border: plan.popular ? 'none' : '1px solid rgba(63, 63, 70, 0.5)',
+                        border: plan.popular ? 'none' : '1px solid rgba(30, 62, 98, 0.5)',
                       }}
                     >
                       {plan.cta}
@@ -1059,8 +1059,8 @@ export default function LandingPage() {
           <div
             className="max-w-4xl mx-auto rounded-3xl py-16 px-8 text-center relative overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(6,182,212,0.1))',
-              border: '1px solid rgba(99, 102, 241, 0.2)',
+              background: 'linear-gradient(135deg, rgba(255,101,0,0.15), rgba(30,62,98,0.1))',
+              border: '1px solid rgba(255, 101, 0, 0.2)',
             }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-[#F4F4F5] mb-4" style={{ fontFamily: 'var(--font-heading)', letterSpacing: '-0.03em' }}>
@@ -1071,11 +1071,11 @@ export default function LandingPage() {
             </p>
             <Link to="/dashboard">
               <motion.button
-                whileHover={{ scale: 1.04, boxShadow: '0 0 40px rgba(99,102,241,0.3)' }}
+                whileHover={{ scale: 1.04, boxShadow: '0 0 40px rgba(255,101,0,0.3)' }}
                 whileTap={{ scale: 0.97 }}
                 className="px-10 py-4 rounded-xl text-white font-semibold flex items-center gap-2 mx-auto cursor-pointer"
                 style={{
-                  background: 'linear-gradient(135deg, #6366F1, #3B82F6)',
+                  background: 'linear-gradient(135deg, #FF6500, #1E3E62)',
                   fontFamily: 'var(--font-heading)',
                 }}
               >
@@ -1087,11 +1087,11 @@ export default function LandingPage() {
       </section>
 
       {/* ═══════════════ SECTION 15: FOOTER ═══════════════ */}
-      <footer className="relative z-10 py-12 px-6" style={{ borderTop: '1px solid rgba(63, 63, 70, 0.3)' }}>
+      <footer className="relative z-10 py-12 px-6" style={{ borderTop: '1px solid rgba(30, 62, 98, 0.3)' }}>
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #6366F1, #06B6D4)' }}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #FF6500, #FF6500)' }}>
                 <Sparkles size={16} className="text-white" />
               </div>
               <span className="text-lg font-bold text-[#F4F4F5]" style={{ fontFamily: 'var(--font-heading)' }}>DeepSeek</span>

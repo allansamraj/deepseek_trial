@@ -5,7 +5,7 @@ export default function TiltCard({
   children,
   className = '',
   maxTilt = 8,
-  glowColor = 'rgba(99, 102, 241, 0.15)',
+  glowColor = 'rgba(255, 101, 0, 0.15)',
   ...props
 }) {
   const cardRef = useRef(null)
@@ -56,11 +56,11 @@ export default function TiltCard({
       onMouseLeave={handleMouseLeave}
       className={`relative overflow-hidden rounded-2xl border transition-all duration-300 ${className}`}
       style={{
-        background: 'rgba(17, 17, 24, 0.65)',
+        background: 'rgba(11, 25, 44, 0.6)',
         backdropFilter: 'blur(24px)',
         WebkitBackdropFilter: 'blur(24px)',
-        borderColor: isHovered ? 'rgba(99, 102, 241, 0.35)' : 'rgba(63, 63, 70, 0.4)',
-        boxShadow: isHovered ? '0 12px 40px rgba(0,0,0,0.4)' : 'none',
+        borderColor: isHovered ? 'rgba(255, 101, 0, 0.35)' : 'rgba(30, 62, 98, 0.45)',
+        boxShadow: isHovered ? '0 12px 40px rgba(0,0,0,0.6)' : 'none',
         transformStyle: 'preserve-3d',
         rotateX: rotateX,
         rotateY: rotateY,

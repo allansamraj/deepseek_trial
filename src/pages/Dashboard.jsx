@@ -35,11 +35,11 @@ const activityData = [
 ];
 
 const recentDocuments = [
-  { name: 'Q3 Revenue Report', department: 'Finance', date: 'Jul 8, 2026', color: '#3B82F6' },
-  { name: 'Employee Handbook v3', department: 'HR', date: 'Jul 7, 2026', color: '#8B5CF6' },
-  { name: 'IT Security Policy', department: 'IT', date: 'Jul 6, 2026', color: '#06B6D4' },
-  { name: 'Marketing Strategy 2025', department: 'Marketing', date: 'Jul 5, 2026', color: '#F59E0B' },
-  { name: 'HR Leave Guidelines', department: 'HR', date: 'Jul 4, 2026', color: '#8B5CF6' },
+  { name: 'Q3 Revenue Report', department: 'Finance', date: 'Jul 8, 2026', color: '#1E3E62' },
+  { name: 'Employee Handbook v3', department: 'HR', date: 'Jul 7, 2026', color: '#FF6500' },
+  { name: 'IT Security Policy', department: 'IT', date: 'Jul 6, 2026', color: '#1E3E62' },
+  { name: 'Marketing Strategy 2025', department: 'Marketing', date: 'Jul 5, 2026', color: '#FF6500' },
+  { name: 'HR Leave Guidelines', department: 'HR', date: 'Jul 4, 2026', color: '#FF6500' },
 ];
 
 const knowledgeGaps = [
@@ -74,9 +74,9 @@ function formatDate() {
 }
 
 function getGapColor(searches) {
-  if (searches >= 60) return '#F43F5E';
-  if (searches >= 35) return '#F59E0B';
-  return '#71717A';
+  if (searches >= 60) return '#E03E00';
+  if (searches >= 35) return '#FF6500';
+  return '#4B6584';
 }
 
 // --- Glass card wrapper ---
@@ -85,10 +85,10 @@ function GlassCard({ children, className = '' }) {
     <div
       className={`overflow-hidden rounded-2xl border p-6 ${className}`}
       style={{
-        background: 'rgba(17, 17, 24, 0.6)',
+        background: 'rgba(11, 25, 44, 0.65)',
         backdropFilter: 'blur(24px)',
         WebkitBackdropFilter: 'blur(24px)',
-        borderColor: 'rgba(63, 63, 70, 0.5)',
+        borderColor: 'rgba(30, 62, 98, 0.45)',
       }}
     >
       {children}
@@ -103,9 +103,9 @@ function CustomTooltip({ active, payload, label }) {
     <div
       className="rounded-xl border px-4 py-3"
       style={{
-        background: 'rgba(17, 17, 24, 0.95)',
+        background: 'rgba(11, 25, 44, 0.95)',
         backdropFilter: 'blur(12px)',
-        borderColor: 'rgba(63, 63, 70, 0.5)',
+        borderColor: 'rgba(30, 62, 98, 0.45)',
       }}
     >
       <p className="mb-1 text-xs font-medium" style={{ color: '#A1A1AA' }}>
@@ -148,21 +148,21 @@ export default function Dashboard() {
         <div
           className="flex w-fit items-center gap-2 rounded-full border px-4 py-2"
           style={{
-            background: 'rgba(16, 185, 129, 0.1)',
-            borderColor: 'rgba(16, 185, 129, 0.3)',
+            background: 'rgba(255, 101, 0, 0.12)',
+            borderColor: 'rgba(255, 101, 0, 0.35)',
           }}
         >
           <span className="relative flex h-2.5 w-2.5">
             <span
               className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-              style={{ backgroundColor: '#10B981' }}
+              style={{ backgroundColor: '#FF6500' }}
             />
             <span
               className="relative inline-flex h-2.5 w-2.5 rounded-full"
-              style={{ backgroundColor: '#10B981' }}
+              style={{ backgroundColor: '#FF6500' }}
             />
           </span>
-          <span className="text-sm font-medium" style={{ color: '#10B981' }}>
+          <span className="text-sm font-medium" style={{ color: '#FF6500' }}>
             AI System Online
           </span>
         </div>
@@ -176,7 +176,7 @@ export default function Dashboard() {
           value="2,847"
           trend="+12.5%"
           trendUp={true}
-          color="#3B82F6"
+          color="#1E3E62"
           delay={0.1}
         />
         <StatCard
@@ -185,7 +185,7 @@ export default function Dashboard() {
           value="1,284"
           trend="+8.3%"
           trendUp={true}
-          color="#6366F1"
+          color="#FF6500"
           delay={0.2}
         />
         <StatCard
@@ -194,7 +194,7 @@ export default function Dashboard() {
           value="98.6%"
           trend="+2.1%"
           trendUp={true}
-          color="#10B981"
+          color="#FF6500"
           delay={0.3}
         />
         <StatCard
@@ -203,7 +203,7 @@ export default function Dashboard() {
           value="342"
           trend="+15.7%"
           trendUp={true}
-          color="#06B6D4"
+          color="#1E3E62"
           delay={0.4}
         />
       </div>
@@ -222,9 +222,9 @@ export default function Dashboard() {
               <div className="flex items-center gap-3">
                 <div
                   className="flex h-10 w-10 items-center justify-center rounded-xl"
-                  style={{ backgroundColor: 'rgba(99, 102, 241, 0.15)' }}
+                  style={{ backgroundColor: 'rgba(255, 101, 0, 0.15)' }}
                 >
-                  <BarChart3 size={20} style={{ color: '#6366F1' }} />
+                  <BarChart3 size={20} style={{ color: '#FF6500' }} />
                 </div>
                 <div>
                   <h3
@@ -233,7 +233,7 @@ export default function Dashboard() {
                   >
                     Knowledge Activity
                   </h3>
-                  <p className="text-xs" style={{ color: '#71717A' }}>
+                  <p className="text-xs" style={{ color: '#829AB1' }}>
                     Weekly queries and document uploads
                   </p>
                 </div>
@@ -244,23 +244,23 @@ export default function Dashboard() {
               <AreaChart data={activityData} margin={{ top: 5, right: 10, left: -10, bottom: 0 }}>
                 <defs>
                   <linearGradient id="queriesGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#6366F1" stopOpacity={0.3} />
-                    <stop offset="100%" stopColor="#6366F1" stopOpacity={0} />
+                    <stop offset="0%" stopColor="#FF6500" stopOpacity={0.35} />
+                    <stop offset="100%" stopColor="#FF6500" stopOpacity={0} />
                   </linearGradient>
                   <linearGradient id="docsGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#06B6D4" stopOpacity={0.3} />
-                    <stop offset="100%" stopColor="#06B6D4" stopOpacity={0} />
+                    <stop offset="0%" stopColor="#1E3E62" stopOpacity={0.35} />
+                    <stop offset="100%" stopColor="#1E3E62" stopOpacity={0} />
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(63, 63, 70, 0.15)" />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(30, 62, 98, 0.25)" />
                 <XAxis
                   dataKey="name"
-                  tick={{ fill: '#71717A', fontSize: 12 }}
+                  tick={{ fill: '#829AB1', fontSize: 12 }}
                   axisLine={false}
                   tickLine={false}
                 />
                 <YAxis
-                  tick={{ fill: '#71717A', fontSize: 12 }}
+                  tick={{ fill: '#829AB1', fontSize: 12 }}
                   axisLine={false}
                   tickLine={false}
                 />
@@ -268,7 +268,7 @@ export default function Dashboard() {
                 <Area
                   type="monotone"
                   dataKey="queries"
-                  stroke="#6366F1"
+                  stroke="#FF6500"
                   strokeWidth={2}
                   fill="url(#queriesGradient)"
                   name="Queries"
@@ -276,7 +276,7 @@ export default function Dashboard() {
                 <Area
                   type="monotone"
                   dataKey="docs"
-                  stroke="#06B6D4"
+                  stroke="#1E3E62"
                   strokeWidth={2}
                   fill="url(#docsGradient)"
                   name="Documents"
@@ -297,9 +297,9 @@ export default function Dashboard() {
             <div className="mb-4 flex items-center gap-3">
               <div
                 className="flex h-10 w-10 items-center justify-center rounded-xl"
-                style={{ backgroundColor: 'rgba(16, 185, 129, 0.15)' }}
+                style={{ backgroundColor: 'rgba(255, 101, 0, 0.15)' }}
               >
-                <Sparkles size={20} style={{ color: '#10B981' }} />
+                <Sparkles size={20} style={{ color: '#FF6500' }} />
               </div>
               <h3
                 className="text-lg font-semibold text-white"
@@ -325,7 +325,7 @@ export default function Dashboard() {
                   </div>
                   <div
                     className="h-1.5 w-full overflow-hidden rounded-full"
-                    style={{ backgroundColor: '#1E1E24' }}
+                    style={{ backgroundColor: '#06101E' }}
                   >
                     <motion.div
                       className="h-full rounded-full"
@@ -333,7 +333,7 @@ export default function Dashboard() {
                       animate={{ width: `${metric.value}%` }}
                       transition={{ duration: 1.2, delay: 0.6, ease: 'easeOut' }}
                       style={{
-                        background: 'linear-gradient(90deg, #6366F1, #06B6D4)',
+                        background: 'linear-gradient(90deg, #FF6500, #1E3E62)',
                       }}
                     />
                   </div>
@@ -356,9 +356,9 @@ export default function Dashboard() {
             <div className="mb-5 flex items-center gap-3">
               <div
                 className="flex h-10 w-10 items-center justify-center rounded-xl"
-                style={{ backgroundColor: 'rgba(6, 182, 212, 0.15)' }}
+                style={{ backgroundColor: 'rgba(30, 62, 98, 0.15)' }}
               >
-                <FileText size={20} style={{ color: '#06B6D4' }} />
+                <FileText size={20} style={{ color: '#829AB1' }} />
               </div>
               <h3
                 className="text-lg font-semibold text-white"
@@ -398,7 +398,7 @@ export default function Dashboard() {
                     >
                       {doc.department}
                     </span>
-                    <span className="text-xs" style={{ color: '#71717A' }}>
+                    <span className="text-xs" style={{ color: '#829AB1' }}>
                       {doc.date}
                     </span>
                   </div>
@@ -419,9 +419,9 @@ export default function Dashboard() {
               <div className="flex items-center gap-3">
                 <div
                   className="flex h-10 w-10 items-center justify-center rounded-xl"
-                  style={{ backgroundColor: 'rgba(245, 158, 11, 0.15)' }}
+                  style={{ backgroundColor: 'rgba(255, 101, 0, 0.15)' }}
                 >
-                  <AlertTriangle size={20} style={{ color: '#F59E0B' }} />
+                  <AlertTriangle size={20} style={{ color: '#FF6500' }} />
                 </div>
                 <h3
                   className="text-lg font-semibold text-white"
@@ -433,8 +433,8 @@ export default function Dashboard() {
               <span
                 className="rounded-full px-2.5 py-0.5 text-xs font-semibold"
                 style={{
-                  backgroundColor: 'rgba(239, 68, 68, 0.15)',
-                  color: '#EF4444',
+                  backgroundColor: 'rgba(255, 101, 0, 0.15)',
+                  color: '#FF6500',
                 }}
               >
                 {knowledgeGaps.length} gaps
@@ -464,16 +464,16 @@ export default function Dashboard() {
                     <button
                       className="rounded-lg border px-3 py-1 text-xs font-medium opacity-0 transition-all group-hover:opacity-100 cursor-pointer"
                       style={{
-                        borderColor: 'rgba(63, 63, 70, 0.5)',
+                        borderColor: 'rgba(30, 62, 98, 0.5)',
                         color: 'var(--color-text-secondary)',
                         background: 'transparent',
                       }}
                       onMouseOver={(e) => {
-                        e.currentTarget.style.borderColor = '#6366F1';
-                        e.currentTarget.style.color = '#6366F1';
+                        e.currentTarget.style.borderColor = '#FF6500';
+                        e.currentTarget.style.color = '#FF6500';
                       }}
                       onMouseOut={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(63, 63, 70, 0.5)';
+                        e.currentTarget.style.borderColor = 'rgba(30, 62, 98, 0.5)';
                         e.currentTarget.style.color = 'var(--color-text-secondary)';
                       }}
                     >

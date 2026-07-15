@@ -29,7 +29,7 @@ export default function Modal({ isOpen, onClose, title, children, maxWidth = 'ma
             style={{
               background: 'rgba(24, 24, 27, 0.95)',
               backdropFilter: 'blur(40px)',
-              border: '1px solid rgba(63, 63, 70, 0.5)',
+              border: '1px solid rgba(30, 62, 98, 0.5)',
               boxShadow: '0 24px 80px rgba(0, 0, 0, 0.5)',
             }}
           >
@@ -37,7 +37,7 @@ export default function Modal({ isOpen, onClose, title, children, maxWidth = 'ma
             {title && (
               <div
                 className="flex items-center justify-between px-6 py-4 border-b"
-                style={{ borderColor: 'rgba(63, 63, 70, 0.5)' }}
+                style={{ borderColor: 'rgba(30, 62, 98, 0.5)' }}
               >
                 <h3 className="text-lg font-semibold" style={{ fontFamily: 'Sora, sans-serif' }}>
                   {title}

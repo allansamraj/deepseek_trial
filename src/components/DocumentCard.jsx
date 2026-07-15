@@ -3,20 +3,20 @@ import { FileText, File, FileCode, MoreVertical } from 'lucide-react'
 
 const typeConfig = {
   PDF: { icon: FileText, color: '#F43F5E', bg: 'rgba(244, 63, 94, 0.12)' },
-  DOCX: { icon: File, color: '#3B82F6', bg: 'rgba(59, 130, 246, 0.12)' },
-  TXT: { icon: FileCode, color: '#10B981', bg: 'rgba(16, 185, 129, 0.12)' },
+  DOCX: { icon: File, color: '#1E3E62', bg: 'rgba(59, 130, 246, 0.12)' },
+  TXT: { icon: FileCode, color: '#FF6500', bg: 'rgba(255, 101, 0, 0.12)' },
 }
 
 const deptColors = {
-  HR: { bg: 'rgba(99, 102, 241, 0.12)', text: '#818CF8', border: 'rgba(99, 102, 241, 0.25)' },
+  HR: { bg: 'rgba(255, 101, 0, 0.12)', text: '#FF8233', border: 'rgba(255, 101, 0, 0.25)' },
   Finance: { bg: 'rgba(245, 158, 11, 0.12)', text: '#FBBF24', border: 'rgba(245, 158, 11, 0.25)' },
-  IT: { bg: 'rgba(6, 182, 212, 0.12)', text: '#22D3EE', border: 'rgba(6, 182, 212, 0.25)' },
-  Marketing: { bg: 'rgba(16, 185, 129, 0.12)', text: '#34D399', border: 'rgba(16, 185, 129, 0.25)' },
+  IT: { bg: 'rgba(30, 62, 98, 0.12)', text: '#22D3EE', border: 'rgba(30, 62, 98, 0.25)' },
+  Marketing: { bg: 'rgba(255, 101, 0, 0.12)', text: '#FF8233', border: 'rgba(255, 101, 0, 0.25)' },
 }
 
 function getHealthColor(score) {
-  if (score >= 85) return '#10B981'
-  if (score >= 70) return '#F59E0B'
+  if (score >= 85) return '#FF6500'
+  if (score >= 70) return '#FF6500'
   return '#F43F5E'
 }
 
@@ -73,7 +73,7 @@ export default function DocumentCard({ document, delay = 0 }) {
       </div>
 
       {/* Bottom Row */}
-      <div className="flex items-center justify-between mt-4 pt-3 border-t border-[rgba(63,63,70,0.3)]">
+      <div className="flex items-center justify-between mt-4 pt-3 border-t border-[rgba(30,62,98,0.3)]">
         <div className="flex items-center gap-3 text-xs text-[#71717A]">
           <span>{document.size}</span>
           <span className="w-1 h-1 rounded-full bg-[#3F3F46]" />

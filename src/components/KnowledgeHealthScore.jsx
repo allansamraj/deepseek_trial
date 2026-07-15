@@ -14,9 +14,9 @@ export default function KnowledgeHealthScore({ score, size = 140 }) {
   }, [score, circumference]);
 
   const getColor = () => {
-    if (score >= 80) return '#10B981';
-    if (score >= 60) return '#F59E0B';
-    return '#F43F5E';
+    if (score >= 80) return '#FF6500';
+    if (score >= 60) return '#1E3E62';
+    return '#E03E00';
   };
 
   const gradientId = `healthGradient-${score}`;
@@ -26,8 +26,8 @@ export default function KnowledgeHealthScore({ score, size = 140 }) {
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
         <defs>
           <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#6366F1" />
-            <stop offset="100%" stopColor="#06B6D4" />
+            <stop offset="0%" stopColor="#FF6500" />
+            <stop offset="100%" stopColor="#1E3E62" />
           </linearGradient>
         </defs>
 
@@ -36,7 +36,7 @@ export default function KnowledgeHealthScore({ score, size = 140 }) {
           cx={center}
           cy={center}
           r={radius}
-          stroke="#27272A"
+          stroke="#06101E"
           strokeWidth={8}
           fill="none"
         />

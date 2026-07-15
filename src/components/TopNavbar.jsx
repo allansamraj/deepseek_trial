@@ -43,9 +43,9 @@ export default function TopNavbar() {
     <header
       className="h-16 shrink-0 flex items-center justify-between px-6 z-30 relative"
       style={{
-        background: 'rgba(17, 17, 24, 0.8)',
+        background: 'rgba(0, 0, 0, 0.8)',
         backdropFilter: 'blur(20px)',
-        borderBottom: '1px solid rgba(63, 63, 70, 0.5)',
+        borderBottom: '1px solid rgba(30, 62, 98, 0.45)',
       }}
     >
       {/* Search */}
@@ -65,13 +65,13 @@ export default function TopNavbar() {
           }}
           className="input pl-10 py-2 text-sm cursor-pointer"
           style={{
-            background: 'rgba(17, 17, 24, 0.6)',
-            borderColor: 'rgba(63, 63, 70, 0.5)',
+            background: 'rgba(11, 25, 44, 0.6)',
+            borderColor: 'rgba(30, 62, 98, 0.45)',
           }}
         />
         <kbd
           className="absolute right-3 top-1/2 -translate-y-1/2 text-xs px-1.5 py-0.5 rounded pointer-events-none"
-          style={{ background: 'rgba(63, 63, 70, 0.5)', color: 'var(--color-text-secondary, #A1A1AA)' }}
+          style={{ background: 'rgba(30, 62, 98, 0.45)', color: 'var(--color-text-secondary, #829AB1)' }}
         >
           ⌘K
         </kbd>
@@ -83,18 +83,18 @@ export default function TopNavbar() {
         <div className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium"
           style={{
             background: aiStatus.connected
-              ? 'rgba(16, 185, 129, 0.12)'
-              : 'rgba(245, 158, 11, 0.12)',
+              ? 'rgba(255, 101, 0, 0.12)'
+              : 'rgba(30, 62, 98, 0.12)',
             border: `1px solid ${aiStatus.connected
-              ? 'rgba(16, 185, 129, 0.25)'
-              : 'rgba(245, 158, 11, 0.25)'}`,
-            color: aiStatus.connected ? '#34D399' : '#F59E0B',
+              ? 'rgba(255, 101, 0, 0.3)'
+              : 'rgba(30, 62, 98, 0.35)'}`,
+            color: aiStatus.connected ? '#FF6500' : '#829AB1',
           }}
         >
           <span
             className="w-2 h-2 rounded-full animate-pulse-glow"
             style={{
-              background: aiStatus.connected ? '#10B981' : '#F59E0B',
+              background: aiStatus.connected ? '#FF6500' : '#829AB1',
             }}
           />
           {aiStatus.connected ? (
@@ -119,8 +119,8 @@ export default function TopNavbar() {
             <Bell size={20} className="text-slate-subtle" />
             {unreadCount > 0 && (
               <span
-                className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white"
-                style={{ background: '#F43F5E' }}
+                className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center text-white animate-pulse"
+                style={{ background: '#FF6500' }}
               >
                 {unreadCount}
               </span>
@@ -134,15 +134,15 @@ export default function TopNavbar() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 8, scale: 0.95 }}
                 transition={{ duration: 0.2 }}
-                className="absolute right-0 top-12 w-80 rounded-xl overflow-hidden z-50"
+                className="absolute right-0 top-12 w-80 rounded-xl overflow-hidden z-50 animate-glow-indigo"
                 style={{
-                  background: 'rgba(17, 17, 24, 0.95)',
+                  background: 'rgba(11, 25, 44, 0.95)',
                   backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(63, 63, 70, 0.5)',
-                  boxShadow: '0 8px 40px rgba(0,0,0,0.4)',
+                  border: '1px solid rgba(30, 62, 98, 0.45)',
+                  boxShadow: '0 8px 40px rgba(0,0,0,0.6)',
                 }}
               >
-                <div className="flex items-center justify-between p-4 border-b" style={{ borderColor: 'rgba(63, 63, 70, 0.5)' }}>
+                <div className="flex items-center justify-between p-4 border-b" style={{ borderColor: 'rgba(30, 62, 98, 0.45)' }}>
                   <h3 className="text-sm font-semibold">Notifications</h3>
                   <button onClick={() => setShowNotifications(false)} className="text-slate-subtle hover:text-white">
                     <X size={16} />
@@ -155,8 +155,8 @@ export default function TopNavbar() {
                       onClick={() => markNotificationRead(n.id)}
                       className="px-4 py-3 cursor-pointer hover:bg-surface-3 transition-colors border-b"
                       style={{
-                        borderColor: 'rgba(63, 63, 70, 0.3)',
-                        background: !n.read ? 'rgba(99, 102, 241, 0.05)' : 'transparent',
+                        borderColor: 'rgba(30, 62, 98, 0.25)',
+                        background: !n.read ? 'rgba(255, 101, 0, 0.05)' : 'transparent',
                       }}
                     >
                       <p className="text-sm font-medium">{n.title}</p>
@@ -174,9 +174,9 @@ export default function TopNavbar() {
         <div className="relative" ref={profileRef}>
           <button
             onClick={() => setShowProfile(!showProfile)}
-            className="w-9 h-9 rounded-full flex items-center justify-center"
+            className="w-9 h-9 rounded-full flex items-center justify-center cursor-pointer"
             style={{
-              background: 'linear-gradient(135deg, #6366F1, #3B82F6)',
+              background: 'linear-gradient(135deg, #FF6500, #1E3E62)',
             }}
           >
             <User size={16} className="text-white" />
@@ -191,24 +191,24 @@ export default function TopNavbar() {
                 transition={{ duration: 0.2 }}
                 className="absolute right-0 top-12 w-56 rounded-xl overflow-hidden z-50"
                 style={{
-                  background: 'rgba(17, 17, 24, 0.95)',
+                  background: 'rgba(11, 25, 44, 0.95)',
                   backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(63, 63, 70, 0.5)',
-                  boxShadow: '0 8px 40px rgba(0,0,0,0.4)',
+                  border: '1px solid rgba(30, 62, 98, 0.45)',
+                  boxShadow: '0 8px 40px rgba(0,0,0,0.6)',
                 }}
               >
-                <div className="p-4 border-b" style={{ borderColor: 'rgba(63, 63, 70, 0.5)' }}>
-                  <p className="text-sm font-semibold">Admin User</p>
+                <div className="p-4 border-b" style={{ borderColor: 'rgba(30, 62, 98, 0.45)' }}>
+                  <p className="text-sm font-semibold text-white">Admin User</p>
                   <p className="text-xs text-slate-subtle">admin@deepseek.ai</p>
                 </div>
                 <div className="p-2">
-                  <button className="w-full text-left px-3 py-2 text-sm rounded-lg hover:bg-surface-3 text-text-secondary hover:text-white transition-colors">
+                  <button className="w-full text-left px-3 py-2 text-sm rounded-lg hover:bg-surface-3 text-text-secondary hover:text-white transition-colors cursor-pointer">
                     Profile Settings
                   </button>
-                  <button className="w-full text-left px-3 py-2 text-sm rounded-lg hover:bg-surface-3 text-text-secondary hover:text-white transition-colors">
+                  <button className="w-full text-left px-3 py-2 text-sm rounded-lg hover:bg-surface-3 text-text-secondary hover:text-white transition-colors cursor-pointer">
                     Help & Support
                   </button>
-                  <button className="w-full text-left px-3 py-2 text-sm rounded-lg hover:bg-surface-3 text-rose transition-colors">
+                  <button className="w-full text-left px-3 py-2 text-sm rounded-lg hover:bg-surface-3 text-rose transition-colors cursor-pointer">
                     Sign Out
                   </button>
                 </div>

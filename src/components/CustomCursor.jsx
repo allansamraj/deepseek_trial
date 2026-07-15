@@ -78,9 +78,9 @@ export default function CustomCursor() {
           translateY: '-50%',
           width: isHoveringInteractive ? 54 : 24,
           height: isHoveringInteractive ? 54 : 24,
-          border: isHoveringInteractive ? '1.5px solid #06B6D4' : '1px solid rgba(99, 102, 241, 0.4)',
-          background: isHoveringInteractive ? 'rgba(6, 182, 212, 0.05)' : 'transparent',
-          boxShadow: isHoveringInteractive ? '0 0 15px rgba(6, 182, 212, 0.2)' : 'none',
+          border: isHoveringInteractive ? '1.5px solid #FF6500' : '1px solid rgba(30, 62, 98, 0.5)',
+          background: isHoveringInteractive ? 'rgba(255, 101, 0, 0.05)' : 'transparent',
+          boxShadow: isHoveringInteractive ? '0 0 15px rgba(255, 101, 0, 0.35)' : 'none',
         }}
         animate={{
           scale: clicked ? 0.8 : 1,
@@ -88,7 +88,7 @@ export default function CustomCursor() {
         transition={{ duration: 0.1 }}
       >
         {cursorText && (
-          <span className="absolute left-16 top-1/2 -translate-y-1/2 text-[10px] font-bold tracking-widest text-[#06B6D4] uppercase bg-black/80 px-2.5 py-1 rounded-md border border-[#06B6D4]/20 font-heading">
+          <span className="absolute left-16 top-1/2 -translate-y-1/2 text-[10px] font-bold tracking-widest text-[#FF6500] uppercase bg-black/80 px-2.5 py-1 rounded-md border border-[#FF6500]/20 font-heading">
             {cursorText}
           </span>
         )}
@@ -96,13 +96,13 @@ export default function CustomCursor() {
 
       {/* Solid Inner Dot */}
       <motion.div
-        className="fixed w-1.5 h-1.5 bg-[#06B6D4] rounded-full pointer-events-none z-50 hidden md:block"
+        className="fixed w-1.5 h-1.5 bg-[#FF6500] rounded-full pointer-events-none z-50 hidden md:block"
         style={{
           x: cursorX,
           y: cursorY,
           translateX: '-50%',
           translateY: '-50%',
-          boxShadow: '0 0 8px #06B6D4',
+          boxShadow: '0 0 8px #FF6500',
         }}
       />
     </>
