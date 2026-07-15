@@ -147,7 +147,7 @@ export default function KnowledgeMap() {
             })}
 
             {/* Draw Nodes */}
-            {Object.keys(departmentData).map((key) => {
+            {Object.keys(departmentData).map((key, i) => {
               const dept = departmentData[key]
               const coord = deptCoordinates[key]
               const Icon = dept.icon
@@ -155,11 +155,22 @@ export default function KnowledgeMap() {
               const isHighlighted = filteredDepts.includes(key)
 
               return (
-                <g
+                <motion.g
                   key={key}
                   className="cursor-pointer"
                   onClick={() => handleNodeClick(key)}
                   style={{ opacity: isHighlighted ? 1 : 0.25, transition: 'opacity 0.3s ease' }}
+                  animate={{
+                    y: [0, -6, 3, -3, 0],
+                    x: [0, 4, -4, 2, 0]
+                  }}
+                  transition={{
+                    duration: 7 + (i * 1.5),
+                    repeat: Infinity,
+                    ease: 'easeInOut'
+                  }}
+                  data-magnetic
+                  data-cursor-text="Inspect"
                 >
                   {/* Outer Pulsing Glow */}
                   {isSelected && (
@@ -170,8 +181,8 @@ export default function KnowledgeMap() {
                       fill="none"
                       stroke={dept.color}
                       strokeWidth="2"
-                      animate={{ scale: [1, 1.2, 1], opacity: [0.6, 0.1, 0.6] }}
-                      transition={{ duration: 2, repeat: Infinity }}
+                      animate={{ scale: [1, 1.25, 0.95, 1.1, 1], opacity: [0.6, 0.1, 0.6] }}
+                      transition={{ duration: 2.5, repeat: Infinity }}
                     />
                   )}
                   
@@ -180,10 +191,13 @@ export default function KnowledgeMap() {
                     cx={coord.x}
                     cy={coord.y}
                     r="24"
-                    fill="rgba(17, 17, 24, 0.9)"
+                    fill="rgba(10, 10, 15, 0.9)"
                     stroke={isSelected ? '#6366F1' : dept.color}
-                    strokeWidth={isSelected ? 3 : 1.5}
-                    style={{ transition: 'all 0.3s ease' }}
+                    strokeWidth={isSelected ? 2.5 : 1.5}
+                    style={{
+                      transition: 'all 0.3s ease',
+                      filter: 'drop-shadow(0 0 10px rgba(0,0,0,0.5))'
+                    }}
                   />
 
                   {/* Icon */}
@@ -203,14 +217,14 @@ export default function KnowledgeMap() {
                   >
                     {dept.name.split(' ')[0]}
                   </text>
-                </g>
+                </motion.g>
               )
             })}
           </svg>
         </div>
 
         {/* Details Panel */}
-        <div className="rounded-2xl p-6" style={{ background: 'rgba(17, 17, 24, 0.6)', border: '1px solid rgba(63, 63, 70, 0.5)' }}>
+        <div className="lg:col-span-1">
           <AnimatePresence mode="wait">
             {selectedDept ? (
               <motion.div
@@ -218,7 +232,11 @@ export default function KnowledgeMap() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                className="space-y-6"
+                className="space-y-6 rounded-2xl p-6 h-full"
+                style={{
+                  background: 'rgba(17, 17, 24, 0.6)',
+                  border: '1px solid rgba(63, 63, 70, 0.5)'
+                }}
               >
                 {/* Header */}
                 <div className="flex items-center gap-4">
@@ -278,7 +296,14 @@ export default function KnowledgeMap() {
                 </div>
               </motion.div>
             ) : (
-              <div className="h-full flex flex-col items-center justify-center text-center py-12 space-y-4">
+              <div
+                className="h-full flex flex-col items-center justify-center text-center py-12 px-6 space-y-4 rounded-2xl"
+                style={{
+                  background: 'rgba(17, 17, 24, 0.6)',
+                  border: '1px solid rgba(63, 63, 70, 0.5)',
+                  minHeight: '400px'
+                }}
+              >
                 <Brain size={48} className="text-[#71717A] animate-float" />
                 <div>
                   <h3 className="text-sm font-semibold text-[#F4F4F5]">No Department Selected</h3>

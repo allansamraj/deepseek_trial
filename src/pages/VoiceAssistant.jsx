@@ -85,101 +85,107 @@ export default function VoiceAssistant() {
           }}
         />
 
-        {/* Mic button container */}
-        <div className="relative flex items-center justify-center mb-8">
-          {/* Waveform bars (listening / speaking) */}
-          <AnimatePresence>
-            {(state === 'listening' || state === 'speaking') && (
-              <>
-                {waveformDelays.map((d, i) => {
-                  const angle = i * 45
-                  const distance = 110
-                  const x = Math.cos((angle * Math.PI) / 180) * distance
-                  const y = Math.sin((angle * Math.PI) / 180) * distance
-                  return (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0 }}
-                      transition={{ delay: d * 0.15, duration: 0.3 }}
-                      className="absolute rounded-full"
-                      style={{
-                        width: 4,
-                        height: 4,
-                        left: '50%',
-                        top: '50%',
-                        transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-                        background:
-                          state === 'listening'
-                            ? 'linear-gradient(to top, #06B6D4, #6366F1)'
-                            : 'linear-gradient(to top, #10B981, #06B6D4)',
-                      }}
-                    >
-                      <motion.div
-                        className="w-full rounded-full"
-                        animate={{
-                          height: [8, 32, 8],
-                        }}
-                        transition={{
-                          duration: 1.2,
-                          repeat: Infinity,
-                          delay: d,
-                          ease: 'easeInOut',
-                        }}
-                        style={{
-                          width: 4,
-                          background: 'inherit',
-                          borderRadius: '9999px',
-                          transformOrigin: 'center',
-                        }}
-                      />
-                    </motion.div>
-                  )
-                })}
-              </>
-            )}
-          </AnimatePresence>
+        {/* Jarvis AI Energy Orb */}
+        <div className="relative flex items-center justify-center mb-12">
+          {/* SVG Noise & Turbulence Filters for Jarvis Liquid Morphing */}
+          <svg className="absolute w-0 h-0">
+            <defs>
+              <filter id="jarvisLiquid">
+                <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale={state === 'listening' ? 25 : state === 'speaking' ? 35 : 8} xChannelSelector="R" yChannelSelector="G" />
+              </filter>
+            </defs>
+          </svg>
 
-          {/* Gradient ring behind the button */}
+          {/* Morphing Outer Aura Layer */}
           <motion.div
             className="absolute rounded-full"
-            animate={{
-              scale: state === 'listening' ? [1, 1.15, 1] : state === 'speaking' ? [1, 1.1, 1] : [1, 1.05, 1],
-              opacity: state === 'idle' ? [0.3, 0.6, 0.3] : [0.5, 1, 0.5],
-            }}
-            transition={{ duration: state === 'idle' ? 3 : 2, repeat: Infinity, ease: 'easeInOut' }}
             style={{
-              width: 176,
-              height: 176,
-              background: cfg.borderGradient,
-              filter: 'blur(1px)',
+              width: 220,
+              height: 220,
+              background: state === 'listening'
+                ? 'radial-gradient(circle, rgba(6,182,212,0.3) 0%, transparent 70%)'
+                : state === 'speaking'
+                ? 'radial-gradient(circle, rgba(16,185,129,0.3) 0%, transparent 70%)'
+                : 'radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)',
+              filter: 'blur(30px) url(#jarvisLiquid)',
+            }}
+            animate={state !== 'idle' ? {
+              scale: [1, 1.15, 0.95, 1.1, 1],
+              rotate: [0, 90, 180, 270, 360]
+            } : {
+              scale: [1, 1.05, 1],
+            }}
+            transition={{
+              duration: state === 'speaking' ? 3 : 6,
+              repeat: Infinity,
+              ease: 'easeInOut'
             }}
           />
 
-          {/* Main mic button */}
+          {/* Holographic Glowing Rings */}
+          {[1, 2].map((i) => (
+            <motion.div
+              key={i}
+              className="absolute rounded-full border pointer-events-none"
+              style={{
+                width: 170 + i * 20,
+                height: 170 + i * 20,
+                borderColor: state === 'listening'
+                  ? 'rgba(6, 182, 212, 0.25)'
+                  : state === 'speaking'
+                  ? 'rgba(16, 185, 129, 0.25)'
+                  : 'rgba(99, 102, 241, 0.15)',
+                boxShadow: state !== 'idle'
+                  ? `inset 0 0 15px ${cfg.glowColor}`
+                  : 'none',
+              }}
+              animate={{
+                rotate: i % 2 === 0 ? 360 : -360,
+                scale: state !== 'idle' ? [1, 1.05, 0.98, 1.02, 1] : 1
+              }}
+              transition={{
+                rotate: { duration: 10 * i, repeat: Infinity, ease: 'linear' },
+                scale: { duration: 2, repeat: Infinity, ease: 'easeInOut' }
+              }}
+            />
+          ))}
+
+          {/* Interactive Core Mic Button */}
           <motion.button
             onClick={handleMicClick}
             whileTap={{ scale: 0.92 }}
+            data-magnetic
+            data-cursor-text={state === 'listening' ? 'Mute' : 'Speak'}
             animate={{
-              scale: state === 'listening' ? 1.05 : 1,
-              boxShadow: state !== 'idle' ? `0 0 40px ${cfg.glowColor}` : '0 0 0px transparent',
+              scale: state === 'listening' ? 1.06 : 1,
+              boxShadow: state !== 'idle' ? `0 0 50px ${cfg.glowColor}` : '0 0 20px rgba(99, 102, 241, 0.1)',
             }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="relative z-10 rounded-full flex items-center justify-center cursor-pointer border-0"
             style={{
-              width: 160,
-              height: 160,
-              background: 'rgba(24, 24, 27, 0.8)',
+              width: 150,
+              height: 150,
+              background: 'rgba(10, 10, 15, 0.85)',
+              border: `1.5px solid ${state === 'listening' ? '#06B6D4' : state === 'speaking' ? '#10B981' : 'rgba(99, 102, 241, 0.3)'}`,
+              backdropFilter: 'blur(20px)',
+              filter: 'url(#jarvisLiquid)',
             }}
           >
+            {/* Center Visual Core */}
             <motion.div
               key={state}
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.25 }}
+              className="flex flex-col items-center justify-center space-y-1.5"
             >
-              <StateIcon size={48} style={{ color: cfg.iconColor }} />
+              <StateIcon size={36} style={{ color: cfg.iconColor }} />
+              {state === 'listening' && (
+                <span className="text-[9px] font-bold tracking-widest text-[#06B6D4] uppercase animate-pulse">
+                  Listening
+                </span>
+              )}
             </motion.div>
           </motion.button>
         </div>

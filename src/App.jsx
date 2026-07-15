@@ -4,6 +4,7 @@ import { AnimatePresence } from 'motion/react'
 import { AppProvider } from './context/AppContext'
 import DashboardLayout from './layouts/DashboardLayout'
 import LoadingScreen from './components/LoadingScreen'
+import CustomCursor from './components/CustomCursor'
 
 const LandingPage = lazy(() => import('./pages/LandingPage'))
 const Dashboard = lazy(() => import('./pages/Dashboard'))
@@ -19,6 +20,7 @@ export default function App() {
   return (
     <AppProvider>
       <BrowserRouter>
+        <CustomCursor />
         <AnimatePresence mode="wait">
           <Suspense fallback={<LoadingScreen />}>
             <Routes>

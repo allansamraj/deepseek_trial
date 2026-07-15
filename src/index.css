@@ -111,6 +111,13 @@ body {
   overflow-x: hidden;
 }
 
+@media (min-width: 768px) {
+  html, body, button, a, input, select, textarea, [role="button"], [data-magnetic] {
+    cursor: none !important;
+  }
+}
+
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;

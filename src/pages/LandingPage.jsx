@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import ParticleBackground from '../components/ParticleBackground'
+import TiltCard from '../components/TiltCard'
 
 /* ═══════════════════════════════════════════════════════
    Data
@@ -181,31 +182,22 @@ function GlassFeatureCard({ icon: Icon, title, description, gradient, index }) {
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-      whileHover={{ y: -6, transition: { duration: 0.3 } }}
-      className="group relative rounded-2xl p-6 cursor-default"
-      style={{
-        background: 'rgba(17, 17, 24, 0.6)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        border: '1px solid rgba(63, 63, 70, 0.5)',
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.4)'
-        e.currentTarget.style.boxShadow = '0 0 30px rgba(99, 102, 241, 0.08), 0 8px 32px rgba(0,0,0,0.3)'
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = 'rgba(63, 63, 70, 0.5)'
-        e.currentTarget.style.boxShadow = 'none'
-      }}
+      className="h-full"
     >
-      <div
-        className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-        style={{ background: gradient }}
+      <TiltCard
+        className="p-6 cursor-default h-full"
+        glowColor="rgba(99, 102, 241, 0.15)"
+        data-magnetic
       >
-        <Icon size={22} className="text-white" />
-      </div>
-      <h3 className="text-lg font-semibold text-[#F4F4F5] mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{title}</h3>
-      <p className="text-sm text-[#A1A1AA] leading-relaxed">{description}</p>
+        <div
+          className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+          style={{ background: gradient }}
+        >
+          <Icon size={22} className="text-white" />
+        </div>
+        <h3 className="text-lg font-semibold text-[#F4F4F5] mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{title}</h3>
+        <p className="text-sm text-[#A1A1AA] leading-relaxed">{description}</p>
+      </TiltCard>
     </motion.div>
   )
 }
@@ -1010,16 +1002,17 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pricingPlans.map((plan, i) => (
               <SectionReveal key={i} delay={i * 0.15}>
-                <div
-                  className="rounded-2xl p-6 relative flex flex-col h-full"
+                <TiltCard
+                  className="p-6 relative flex flex-col h-full cursor-default"
+                  glowColor={plan.popular ? 'rgba(99, 102, 241, 0.25)' : 'rgba(99, 102, 241, 0.12)'}
                   style={{
                     background: plan.popular ? 'rgba(99, 102, 241, 0.08)' : 'rgba(17, 17, 24, 0.6)',
-                    border: `1px solid ${plan.popular ? 'rgba(99, 102, 241, 0.4)' : 'rgba(63, 63, 70, 0.5)'}`,
-                    boxShadow: plan.popular ? '0 0 40px rgba(99, 102, 241, 0.1)' : 'none',
+                    borderColor: plan.popular ? 'rgba(99, 102, 241, 0.4)' : 'rgba(63, 63, 70, 0.5)',
                   }}
+                  data-magnetic
                 >
                   {plan.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-semibold text-white" style={{ background: 'linear-gradient(135deg, #6366F1, #3B82F6)' }}>
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-semibold text-white z-10" style={{ background: 'linear-gradient(135deg, #6366F1, #3B82F6)' }}>
                       Most Popular
                     </div>
                   )}
@@ -1053,7 +1046,7 @@ export default function LandingPage() {
                       {plan.cta}
                     </motion.button>
                   </Link>
-                </div>
+                </TiltCard>
               </SectionReveal>
             ))}
           </div>
